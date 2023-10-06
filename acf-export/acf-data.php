@@ -20,78 +20,110 @@ acf_add_local_field_group(array(
             
             'layouts' => array(
 				
-				'layout_64942cee77bea' => array(
-                    'key' => 'layout_64942cee77bea',
-                    'name' => 'faq',
-                    'label' => 'FAQ',
-                    'display' => 'block',
-                    'sub_fields' => array(
-                        array(
-                            'key' => 'field_64942cf9f43ca',
-                            'label' => 'FAQ items',
-                            'name' => 'faq_items',
-                            'type' => 'repeater',
-                            'instructions' => '',
-                            'required' => 0,
-                            'conditional_logic' => 0,
-                            'wrapper' => array(
-                                'width' => '',
-                                'class' => '',
-                                'id' => '',
-                            ),
-                            'collapsed' => '',
-                            'min' => 0,
-                            'max' => 0,
-                            'layout' => 'table',
-                            'button_label' => '',
-                            'sub_fields' => array(
-                                array(
-                                    'key' => 'field_64942d3b850e5',
-                                    'label' => 'Question',
-                                    'name' => 'faq_question',
-                                    'type' => 'wysiwyg',
-                                    'instructions' => '',
-                                    'required' => 0,
-                                    'conditional_logic' => 0,
-                                    'wrapper' => array(
-                                        'width' => '',
-                                        'class' => '',
-                                        'id' => '',
-                                    ),
-                                    'default_value' => '',
-                                    'placeholder' => '',
-                                    'prepend' => '',
-                                    'append' => '',
-                                    'maxlength' => '',
-                                ),
-                                array(
-                                    'key' => 'field_64942d40850e6',
-                                    'label' => 'Answer',
-                                    'name' => 'faq_answer',
-                                    'type' => 'wysiwyg',
-                                    'instructions' => '',
-                                    'required' => 0,
-                                    'conditional_logic' => 0,
-                                    'wrapper' => array(
-                                        'width' => '',
-                                        'class' => '',
-                                        'id' => '',
-                                    ),
-                                    'default_value' => '',
-                                    'placeholder' => '',
-                                    'prepend' => '',
-                                    'append' => '',
-                                    'maxlength' => '',
-                                ),
-                            ),
-                        ),
-                    ),
-                    'min' => '',
-                    'max' => '',
-                ),
+				'layout_651c373b76d1e' => array(
+					'key' => 'layout_651c373b76d1e',
+					'name' => 'faq_module',
+					'label' => 'FAQ Module',
+					'display' => 'block',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_651c375af202f',
+							'label' => 'Faq Repeater',
+							'name' => 'faq_repeater',
+							'type' => 'repeater',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'collapsed' => '',
+							'min' => 0,
+							'max' => 0,
+							'layout' => 'table',
+							'button_label' => '',
+							'sub_fields' => array(
+								array(
+									'key' => 'field_651c378af2030',
+									'label' => 'Faq pytje',
+									'name' => 'faq_pytje',
+									'type' => 'wysiwyg',
+									'instructions' => '',
+									'required' => 0,
+									'conditional_logic' => 0,
+									'wrapper' => array(
+										'width' => '',
+										'class' => '',
+										'id' => '',
+									),
+									'default_value' => '',
+									'tabs' => 'all',
+									'toolbar' => 'full',
+									'media_upload' => 1,
+									'delay' => 0,
+								),
+								array(
+									'key' => 'field_651c379ef2031',
+									'label' => 'Faq Pergjigje',
+									'name' => 'faq_pergjigje',
+									'type' => 'wysiwyg',
+									'instructions' => '',
+									'required' => 0,
+									'conditional_logic' => 0,
+									'wrapper' => array(
+										'width' => '',
+										'class' => '',
+										'id' => '',
+									),
+									'default_value' => '',
+									'tabs' => 'all',
+									'toolbar' => 'full',
+									'media_upload' => 1,
+									'delay' => 0,
+								),
+							),
+						),
+					),
+					'min' => '',
+					'max' => '',
+				),
+                'layout_651eca4ec9006' => array(
+					'key' => 'layout_651eca4ec9006',
+					'name' => 'content_module',
+					'label' => 'Content Module',
+					'display' => 'block',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_651eca5c82cf5',
+							'label' => 'Postim',
+							'name' => 'postim',
+							'type' => 'wysiwyg',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'tabs' => 'all',
+							'toolbar' => 'full',
+							'media_upload' => 1,
+							'delay' => 0,
+						),
+					),
+					'min' => '',
+					'max' => '',
+				),
+				// ketu e gjeneroni kodin e ACF
+
+                
 
 
-              
+
 
 
 
