@@ -14,6 +14,45 @@ function mytheme_script_enqueue() {
 }
 add_action('wp_enqueue_scripts', 'mytheme_script_enqueue');
 
+// Create Custom Post type Banesa,APartamenti
+function register_custom_post_types() {
+    register_post_type('banesa',
+        array(
+            'labels' => array(
+                'name' => __('Banesa'),
+                'singular_name' => __('Banesa'),
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'editor',
+                'thumbnail',
+                'custom-fields', // Enable custom fields
+            )
+        )
+    );
+
+    register_post_type('apartmenti',    
+        array(
+            'labels' => array(
+                'name' => __('Apartmenti'),
+                'singular_name' => __('Apartmenti'),
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'editor',
+                'thumbnail',
+                'custom-fields', // Enable custom fields
+            )
+        )
+    );
+}
+
+add_action('init', 'register_custom_post_types');
+add_theme_support( 'post-thumbnails' );
 
 /*
 	==========================================
@@ -44,6 +83,7 @@ if (file_exists(get_stylesheet_directory() . '/acf-export/acf-data.php')) {
 	--------------
 	==========================================
 */
+
 
 
 

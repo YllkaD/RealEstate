@@ -118,19 +118,48 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
+				'layout_6522bd79ebd2c' => array(
+					'key' => 'layout_6522bd79ebd2c',
+					'name' => 'cards_module',
+					'label' => 'Cards Module',
+					'display' => 'block',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_6522bd97ebd2e',
+							'label' => 'Cards',
+							'name' => 'cards',
+							'aria-label' => '',
+							'type' => 'relationship',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'post_type' => array(
+								0 => 'banesa',
+								1 => 'apartmenti',
+							),
+							'post_status' => '',
+							'taxonomy' => '',
+							'filters' => array(
+								0 => 'post_type',
+							),
+							'return_format' => 'object',
+							'min' => '',
+							'max' => '',
+							'elements' => '',
+							'bidirectional' => 0,
+							'bidirectional_target' => array(
+							),
+						),
+					),
+					'min' => '',
+					'max' => '',
+				),
 				// ketu e gjeneroni kodin e ACF
-
-                
-
-
-
-
-
-
-
-
-
-
 
             ),
 
@@ -142,14 +171,12 @@ acf_add_local_field_group(array(
     ),
     'location' => array(
 		array(
-            array(
-                'param' => 'post_type',
-                'operator' => '==',
-                'value' => 'page',
-            ),
+			array(
+				'param' => 'post_type',
+				'operator' => '!=',     
+				'value' => 'page',      
+			),
 		),
-      
-	
     ),
     'menu_order' => 0,
     'position' => 'normal',
