@@ -9,9 +9,35 @@ body {
 body{
     padding: 20px;
 }
+h1{
+  font-size: 30px !important;
+}
+h2{
+  font-size: 26px !important;
+}
+h3{
+  font-size: 20px !important;
+}
+h4{
+  font-size: 17px !important;
+}
+p{
+  font-size:  15px !important;
+}
 
-.accordion {
-  background-color: #eee;
+/*
+	==========================================
+	Faq Module
+	==========================================
+*/
+.faq{
+  padding: 10px;
+  margin: 20px 0 20px 0 ;
+}
+
+
+.faq-module {
+  background-color: #d3d0d0;
   color: #444;
   cursor: pointer;
   padding: 18px;
@@ -23,23 +49,38 @@ body{
   transition: 0.4s;
 }
 
-.active, .accordion:hover {
-  background-color: #ccc; 
+.active, .faq-module:hover {
+  background-color: #b8b7b7; 
 }
 
-.panel {
+.faq-pergjigje {
   padding: 0 18px;
   display: none;
-  background-color: white;
+  background-color: rgb(241, 241, 241);
   overflow: hidden;
 }
 
-
-
-.long-text{
-  opacity: .75;
-  text-overflow: ellipsis;
-  overflow-wrap: break-word;
+/*
+	==========================================
+	 Content Module 
+	==========================================
+*/
+.content-module img{
+  float: right;
+  width: 250px;
+  margin: 45px 35px 10px 40px;
+}
+.content-module{
+  margin: 25px;
+}
+.content-module h1,.content-module h2,.content-module h3{
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
 }
 
-
+/*
+	==========================================
+	 -------
+	==========================================
+*/

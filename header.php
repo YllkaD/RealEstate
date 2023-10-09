@@ -13,6 +13,12 @@
     
 
 <?php
+
+/*
+	==========================================
+	Pjesen e Headerit e rregullon,wp_nav_menu e kam vendos vetem per veti me mu shfaq
+	==========================================
+*/
 wp_nav_menu(
     array(
         'theme_location' => 'primary-menu',
