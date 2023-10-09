@@ -177,6 +177,21 @@ acf_add_local_field_group(array(
 				'value' => 'page',      
 			),
 		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '!=',     
+				'value' => 'house',      
+			),
+		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '!=',     
+				'value' => 'aparment',      
+			),
+		),
+		
     ),
     'menu_order' => 0,
     'position' => 'normal',
