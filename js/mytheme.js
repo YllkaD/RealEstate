@@ -6,14 +6,14 @@
 */
 
 function showTheFaq(question) {
-    var pytje = question.nextElementSibling;
-    if (pytje.style.display == 'none') {
-        pytje.style.display = 'block';
-    } else {
-        pytje.style.display = 'none';
-    }
-  }
+    var answer = question.nextElementSibling;
 
+    if (answer.style.display === 'none') {
+      answer.style.display = 'block';
+    } else {
+      answer.style.display = 'none';
+    }
+}
 
   /*
 	==========================================
