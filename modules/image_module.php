@@ -7,3 +7,4 @@ $image = get_sub_field('image');
             <img src="<?php echo $image; ?>" alt="<?php echo $image; ?>" class="h-auto max-w-lg transition-all duration-300 rounded-lg cursor-pointer" >
         </div>
 </section>
+
