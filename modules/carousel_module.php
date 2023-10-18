@@ -3,7 +3,7 @@
 if (have_rows('image_gallery')): ?>
 
     <?php while(have_rows('image_gallery') ) : the_row();
-    
+
         $image = get_sub_field('image');
         $images[]=$image;
         $title = get_sub_field('title');
@@ -14,12 +14,12 @@ if (have_rows('image_gallery')): ?>
 
 <div class="container mx-auto my-20">
 <div id="default-carousel" class="relative w-full" data-carousel="slide">
-    
+
 <h3 class="text-center my-4"><?php echo $title; ?></h3>
 
    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
     <?php foreach ($image as $index => $image_item) : ?>
-        
+
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="<?php echo $image_item; ?>" class="absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
