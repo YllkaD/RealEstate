@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"  rel="stylesheet" />
     <?php wp_head(); ?>
-    <?php include (get_template_directory().'/include/module.php'); ?>
+   
 </head>
 <body <?php body_class(); ?> >
     
