@@ -10,21 +10,39 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
+<section class="header">
+    <div class="container">
+        
+        
+        <div class="menu">
+            <?php      
+            wp_nav_menu(array(
+                'theme_location' => 'primary',
+                'link_before' => '<span class="link-class">',
+                'link_after' => '</span>'
+            ));
+            ?>
+        </div>
+
+        <div class="logo text-blue-500">
+            <h1 class="font-bold">KeyReside</h1>
+        </div>
+
+        <div class="secondary-menu menu-active">
+            <?php      
+            wp_nav_menu(array(
+                'theme_location' => 'secondary',
+                'link_before' => '<span class="link-class">',
+                'link_after' => '</span>'
+            ));
+            ?>
+        </div>
+        <div class="menu-toggle">
+            <button class="menu-button" id="menu-button">&#9776;</button>
+        </div>
+</div>
+
+</section>
     
 
-<?php
 
-/*
-	==========================================
-	Pjesen e Headerit e rregullon,wp_nav_menu e kam vendos vetem per veti me mu shfaq
-	==========================================
-*/
-wp_nav_menu(
-    array(
-        'theme_location' => 'primary-menu',
-        'menu_id'        => 'primary-menu',
-    )
-);
-
-
-?>
