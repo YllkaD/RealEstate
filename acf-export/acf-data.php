@@ -244,14 +244,33 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
-				'layout_652655548fba4' => array(
-					'key' => 'layout_652655548fba4',
+				'layout_653784586c50a' => array(
+					'key' => 'layout_653784586c50a',
 					'name' => 'image_module',
 					'label' => 'Image module',
 					'display' => 'block',
 					'sub_fields' => array(
 						array(
-							'key' => 'field_6526555aa9695',
+							'key' => 'field_6537846e4a4c9',
+							'label' => 'Title',
+							'name' => 'title',
+							'type' => 'wysiwyg',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'tabs' => 'all',
+							'toolbar' => 'full',
+							'media_upload' => 1,
+							'delay' => 0,
+						),
+						array(
+							'key' => 'field_653784ca4a4ca',
 							'label' => 'Image',
 							'name' => 'image',
 							'type' => 'image',
