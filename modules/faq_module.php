@@ -1,8 +1,12 @@
+<section class="faq-section">
+  <div class="faq container mx-auto">
+    <?php $title = get_sub_field('section_title'); ?>
+    <?php if ($title) : ?>
+      <div class="title">
+        <?php echo $title; ?>
+      </div>
+    <?php endif; ?>
 
-<section class="container mx-auto">
-  
-  <div class="faq">
-  <h1>Accordion</h1>
     <?php if (have_rows('faq_repeater')) : ?>
       <?php while (have_rows('faq_repeater')) : the_row(); ?>
         <?php
@@ -10,16 +14,16 @@
           $pergjigje = get_sub_field('faq_pergjigje');
         ?>
 
-      <div class="">
-        <button class="faq-module" onclick="showTheFaq(this)"><?php echo $pytje ?></button>
-          <div class="faq-pergjigje">
-            <p><?php echo $pergjigje ?></p>
-          </div>
-      </div>
-      
-    <?php endwhile; ?>
-    <?php endif; ?>
+        <div class="faq-text">
+          <button class="accordion" onclick="showTheFaq(this)">
+            <?php echo $pytje; ?>
+          </button>
 
+          <div class="answer">
+            <?php echo $pergjigje; ?>
+          </div>
+        </div>
+      <?php endwhile; ?>
+    <?php endif; ?>
   </div>
 </section>
-
