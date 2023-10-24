@@ -38,3 +38,8 @@ if ( file_exists( get_template_directory() . '/include/taxonomies.php' ) ) {
     include_once get_template_directory() . '/include/taxonomies.php';
 }
 
+
+function register_footer_menu() {
+    register_nav_menu('footer-menu', ('Footer Menu'));
+}
+add_action('after_setup_theme', 'register_footer_menu');
