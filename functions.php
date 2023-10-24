@@ -38,3 +38,4 @@ if ( file_exists( get_template_directory() . '/include/taxonomies.php' ) ) {
     include_once get_template_directory() . '/include/taxonomies.php';
 }
 
+add_theme_support( 'post-thumbnails' );
