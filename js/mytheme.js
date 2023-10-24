@@ -4,19 +4,24 @@
 	 Faq Show onclick pytjet
 	==========================================
 */
+function showTheFaq(button) {
+  button.classList.toggle("active");
+  var answer = button.nextElementSibling;
 
-function showTheFaq(question) {
-    var answer = question.nextElementSibling;
-
-    if (answer.style.display == 'none') {
-      answer.style.display = 'block';
-    } else {
-      answer.style.display = 'none';
-    }
+  if(answer.style.maxHeight)
+  {
+    answer.style.maxHeight = null;
+  }else 
+  {
+    answer.style.maxHeight = answer.scrollHeight + "px";
+  }
 }
+
 
   /*
 	==========================================
 	 ----------
 	==========================================
 */
+
+
