@@ -107,6 +107,179 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
+				'layout_banner_module' => array(
+					'key' => 'layout_banner_module',
+					'name' => 'banner_module',
+					'label' => 'Banner Module',
+					'display' => 'block',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_652a7a1c9f47d',
+							'label' => 'Banner Module',
+							'name' => 'banner_module',
+							'type' => 'flexible_content',
+							'layouts' => array(
+								'layout_banner_module' => array(
+									'key' => 'layout_banner_module',
+									'name' => 'banner_module',
+									'label' => 'Banner Module',
+									'display' => 'block',
+									'sub_fields' => array(
+										array(
+											'key' => 'field_banner_text',
+											'label' => 'Banner Text',
+											'name' => 'banner_text',
+											'type' => 'text',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => 0,
+											'wrapper' => array(
+												'width' => '',
+												'class' => '',
+												'id' => '',
+											),
+											'default_value' => '',
+											'maxlength' => '',
+											'placeholder' => '',
+											'prepend' => '',
+											'append' => '',
+										),
+										array(
+											'key' => 'field_banner_image',
+											'label' => 'Banner Image',
+											'name' => 'banner_image',
+											'type' => 'image',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => 0,
+											'wrapper' => array(
+												'width' => '',
+												'class' => '',
+												'id' => '',
+											),
+											'return_format' => 'url',
+											'preview_size' => 'medium',
+											'library' => 'all',
+											'min_width' => '',
+											'min_height' => '',
+											'min_size' => '',
+											'max_width' => '',
+											'max_height' => '',
+											'max_size' => '',
+											'mime_types' => '',
+										),
+										array(
+											'key' => 'field_banner_switch',
+											'label' => 'Switch Button',
+											'name' => 'banner_switch',
+											'type' => 'true_false',
+											'instructions' => 'Show Button',
+											'required' => 0,
+											'conditional_logic' => 0,
+											'wrapper' => array(
+												'width' => '',
+												'class' => '',
+												'id' => '',
+											),
+											'message' => 'Show Button',
+											'default_value' => 0,
+											'ui' => 1,
+										),
+										array(
+											'key' => 'field_button_text',
+											'label' => 'Button Text',
+											'name' => 'button_text',
+											'type' => 'text',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => array(
+												array(
+													array(
+														'field' => 'field_banner_switch',
+														'operator' => '==',
+														'value' => '1',
+													),
+												),
+											),
+											'wrapper' => array(
+												'width' => '',
+												'class' => '',
+												'id' => '',
+											),
+											'default_value' => '',
+											'maxlength' => '',
+											'placeholder' => '',
+											'prepend' => '',
+											'append' => '',
+										),
+										array(
+											'key' => 'field_button_link',
+											'label' => 'Button Link',
+											'name' => 'button_link',
+											'type' => 'url',
+											'instructions' => '',
+											'required' => 0,
+											'conditional_logic' => array(
+												array(
+													array(
+														'field' => 'field_banner_switch',
+														'operator' => '==',
+														'value' => '1',
+													),
+												),
+											),
+											'wrapper' => array(
+												'width' => '',
+												'class' => '',
+												'id' => '',
+											),
+											'default_value' => '',
+											'placeholder' => '',
+										),
+									),
+								),
+							),
+						),
+						
+					),
+
+				),
+				'layouts' => array(
+					// ... (your existing layouts)
+					'layout_banner_module' => array(
+						'key' => 'layout_banner_module',
+						'name' => 'banner_module',
+						'label' => 'Banner Module',
+						'display' => 'block',
+						'sub_fields' => array(
+							array(
+								'key' => 'field_banner_image',
+								'label' => 'Banner Image',
+								'name' => 'banner_image',
+								'type' => 'image',
+								'instructions' => '',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'return_format' => 'url',
+								'preview_size' => 'medium',
+								'library' => 'all',
+								'min_width' => '',
+								'min_height' => '',
+								'min_size' => '',
+								'max_width' => '',
+								'max_height' => '',
+								'max_size' => '',
+								'mime_types' => '',
+							),
+						),
+					),
+				),
+								
 
                 'layout_651eca4ec9006' => array(
 					'key' => 'layout_651eca4ec9006',
@@ -137,6 +310,7 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
+				
 				'layout_6522bd79ebd2c' => array(
 					'key' => 'layout_6522bd79ebd2c',
 					'name' => 'cards_module',
@@ -687,6 +861,7 @@ acf_add_local_field_group(array(
             'max' => '',
         ),
     ),
+	
     'location' => array(
 		array(
 			array(
@@ -719,5 +894,10 @@ acf_add_local_field_group(array(
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
-));
+
+	
+
+	)
+	
+);
 endif;
