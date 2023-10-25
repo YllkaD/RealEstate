@@ -11,7 +11,7 @@
 </head>
 <body <?php body_class(); ?> >
 <section class="header">
-    <div class="container">
+    <div class="container mx-auto">
         
         
         <div class="menu">
@@ -43,6 +43,16 @@
 </div>
 
 </section>
-    
 
 
+
+<script>
+
+document.getElementById("menu-button").addEventListener("click", function() {
+    var navmenu = document.querySelector(".menu");
+    navmenu.classList.toggle("active");
+});
+
+
+
+</script>
