@@ -11,7 +11,7 @@
 </head>
 <body <?php body_class(); ?> >
 <section class="header">
-    <div class="container">
+    <div class="container mx-auto">
         
         
         <div class="menu">
