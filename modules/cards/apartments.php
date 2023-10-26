@@ -49,9 +49,8 @@ $content_module = get_sub_field('description');
                   </div>
                   <span class="text-[#545454] text-sm font-normal"><?= $field['furnished']['value']?> </span>
                 </div>
-                
                 <div class="text-right mt-6">
-                     <button class="bg-blue-500 text-white py-3 px-20 rounded-full hover:bg-blue-600 ml-auto">Book Now</button>
+                     <a href="#" class="bg-blue-500 text-white py-3 px-20 rounded-full hover:bg-blue-600 ml-auto">Book Now</a>
                 </div>
             </div>
           </div>
