@@ -40,7 +40,4 @@ if ( file_exists( get_template_directory() . '/include/taxonomies.php' ) ) {
 
 add_theme_support( 'post-thumbnails' );
 
-function register_footer_menu() {
-    register_nav_menu('footer-menu', ('Footer Menu'));
-}
-add_action('after_setup_theme', 'register_footer_menu');
+
