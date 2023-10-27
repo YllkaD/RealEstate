@@ -12,10 +12,13 @@ if (have_rows('image_gallery')): ?>
 <?php endif; ?>
 
 
+<section class="carousel">
 <div class="container mx-auto my-20">
 <div id="default-carousel" class="relative w-full" data-carousel="slide">
 
-<h3 class="text-center my-4"><?php echo $title; ?></h3>
+<div class="title">
+    <?php echo $title; ?>
+</div>
 
    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
     <?php foreach ($image as $index => $image_item) : ?>
@@ -53,4 +56,5 @@ if (have_rows('image_gallery')): ?>
 </div>
 </div>
 
+</section>
 

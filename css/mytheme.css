@@ -347,7 +347,6 @@ body {
   
   display: flex;
   justify-content: space-between;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
 }
 
 .menu {
@@ -483,4 +482,66 @@ body {
 }
 
 
-  
+  /*
+	==========================================
+	 carousel
+	==========================================
+*/
+
+
+.carousel .title h1 {
+    color: #000;
+    font-family: Plus Jakarta Sans;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 22.68px;
+    padding: 26px 0 19px 42px;
+    text-align: center;
+  }
+  .carousel .title  h2 {
+    color: #000;
+    font-family: Plus Jakarta Sans;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 22.68px;
+    padding: 26px 0 19px 42px;
+     text-align: center;
+  }
+  .carousel .title  h3 {
+    color: #000;
+    font-family: Plus Jakarta Sans;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 22.68px;
+    padding: 26px 0 19px 42px;
+     text-align: center;
+  }
+  .carousel .title  h4 {
+    color: #000;
+    font-family: Plus Jakarta Sans;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 25.2px;
+    padding: 24px 0 0 42px;
+     text-align: center;
+  }
+  .carousel .title  h5 {
+    color: #545454;;
+    font-family: Plus Jakarta Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22.68px;
+    padding: 5px 0 19px 42px;
+     text-align: center;
+    width: 88%;
+  }
+  .carousel .title  h6 {
+    color: #000;
+    font-family: Plus Jakarta Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.68px;
+    padding: 26px 0 19px 42px;
+     text-align: center;
+  }
