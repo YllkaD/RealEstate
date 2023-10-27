@@ -436,8 +436,8 @@ footer{
   padding-top: 80px;
 }
 
-.footer, .btn{
-  
+.footer, .btn {
+
   display: flex;
   width: 200px;
   height: 50px;
@@ -453,9 +453,11 @@ footer{
   margin: 43px 140px;
 }
 
-.social-icons {
-  
+.contact-icons{
 
+float: right;
+display: flex;
+justify-content: flex-end;
 
 }
 
@@ -464,7 +466,7 @@ footer{
 .row {
   display: flex; 
   justify-content:first baseline; 
-  
+
 }
 
 
@@ -474,17 +476,17 @@ footer{
   color: #000;
   padding: 70px;
   margin-left: 100px;
-  
+
 }
 
 
 .icon{
   display: flex;
  
-  
+
 }
 .right h2{
-  margin-left: 55px;
+  margin-left: 30px;
   margin-bottom: 0px;
 }
 
@@ -493,9 +495,8 @@ footer{
 .privacy{
   float: right;
   margin-right: 100px;
-  
-}
 
+}
 
 /*
 	==========================================
