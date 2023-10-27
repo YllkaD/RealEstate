@@ -482,6 +482,36 @@ body {
 }
 
 
+@media (max-width: 600px) {
+  .banner-container {
+    padding-left: 20px; 
+  }
+
+  .banner-elements {
+    width: 90%; 
+  }
+
+  .banner-title {
+    font-size: 32px; 
+  }
+
+  .banner-description {
+    font-size: 14px; 
+  }
+
+  .banner-search {
+    width: 80%;
+    font-size: 11px;
+  }
+
+  .banner-btn {
+    margin-left: 20;
+    font-size: 15px;
+  }
+}
+
+
+
   /*
 	==========================================
 	 carousel
