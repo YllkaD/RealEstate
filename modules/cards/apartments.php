@@ -4,7 +4,7 @@ $row_cards_tablet = get_sub_field('row_cards_tablet');
 $row_cards_mobile = get_sub_field('row_cards_mobile');
 $content_module = get_sub_field('description');
 ?>
-<div class="cards-module-apartments container mx-auto  px-4 lg:px-0 py-4">
+<div class="cards-module-apartments container mx-auto  px-4 lg:px-0 py-4 mt-60">
   <div class="content_module">
     <?= $content_module ?>
   </div>
@@ -52,13 +52,16 @@ $content_module = get_sub_field('description');
                 <div class="text-right mt-7">
                       <a href="<?php the_permalink(); ?>" class="bg-blue-500 text-white py-3 px-10 rounded-full hover:bg-blue-600">Book Now</a>
                 </div>
-
             </div>
           </div>
       </div>
     <?php endforeach; ?>
   </div>
+  <div class="text-center mb-80 mt-14">
+    <a href="#" class="bg-transparent text-white-500 border border-2 border-white-500 py-4 px-20 rounded-md font-plus-jakarta-sans text-xl focus:outline-none">Check More</a>
 </div>
+</div>
+
 
 
 
