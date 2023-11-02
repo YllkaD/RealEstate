@@ -210,6 +210,50 @@
                     'save_custom' => 0,
                 ),
                 array(
+                    'key' => 'field_6525a2f9c3be5',
+                    'label' => 'Price',
+                    'name' => 'price',
+                    'aria-label' => '',
+                    'type' => 'number',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'min' => '',
+                    'max' => '',
+                    'placeholder' => '',
+                    'step' => '',
+                    'prepend' => '',
+                    'append' => '$',
+                ),
+                array(
+                    'key' => 'field_65437d08c3e5e',
+                    'label' => 'Area',
+                    'name' => 'area',
+                    'aria-label' => '',
+                    'type' => 'number',
+                    'instructions' => 'Enter the area in square meters.',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'min' => '',
+                    'max' => '',
+                    'placeholder' => '',
+                    'step' => '',
+                    'prepend' => '',
+                    'append' => 'sq m',
+                ),
+                array(
                     'key' => 'field_65259f54fe76f',
                     'label' => 'Gallery',
                     'name' => 'gallery',
@@ -223,7 +267,7 @@
                         'class' => '',
                         'id' => '',
                     ),
-                    'return_format' => 'array',
+                    'return_format' => 'url',
                     'library' => 'all',
                     'min' => '',
                     'max' => '',
@@ -238,6 +282,8 @@
                     'preview_size' => 'medium',
                 ),
             ),
+            
+            
             'location' => array(
                 array(
                     array(

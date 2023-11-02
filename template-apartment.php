@@ -10,29 +10,30 @@ get_header(); ?>
     <main id="main" class="site-main" role="main">
 
         <?php
-        // Start the loop.
+        
         while ( have_posts() ) : the_post();
 
             get_template_part( 'template-parts/content', 'page' );
 
-            // Display the gallery
-            $gallery_images = get_post_meta(get_the_ID(), '_apartment_gallery', true);
+            
+            <?php
+            
+            $gallery_images = get_field('gallery');
 
-            if (!empty($gallery_images)) {
-                $images = explode(',', $gallery_images);
-                echo '<div id="gallery">';
-                foreach ($images as $image) {
-                    echo '<div class="gallery-image"><img src="' . esc_url($image) . '" alt="" /></div>';
+            if ($gallery_images) {
+                echo '<div class="gallery">';
+                foreach ($gallery_images as $image_url) {
+                    echo '<img src="' . esc_url($image_url) . '" alt="" />';
                 }
                 echo '</div>';
             }
+            ?>
 
-            // If comments are open or we have at least one comment, load up the comment template.
+
             if ( comments_open() || get_comments_number() ) :
                 comments_template();
             endif;
 
-        // End the loop.
         endwhile;
         ?>
 
