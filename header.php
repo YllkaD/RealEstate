@@ -25,7 +25,9 @@
         </div>
 
         <div class="logo text-blue-500">
+        <a href="<?php echo get_home_url(); ?>">
             <h1 class="font-bold">KeyReside</h1>
+        </a>
         </div>
 
         <div class="secondary-menu menu-active">
