@@ -19,7 +19,6 @@ if ( have_posts() ) {
             <ul>
                 <?php
                 $features = get_field('features');
-@@ -25,18 +27,24 @@
                 ?>
             </ul>
 
