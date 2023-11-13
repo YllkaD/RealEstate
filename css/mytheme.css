@@ -245,23 +245,34 @@ body {
   
 
 .header{
-
+  padding-top: 10px;
   display: flex;
   position: relative;
+  height: 97px;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
 
 .header .container{
   
   display: flex;
   justify-content: space-between;
+  
 }
 
-.menu {
+.header .menu {
   display: flex;
   position: relative;
   padding-left: 30px;
 }
-.menu li {
+.header .menu li {
+  color: #000;
+  text-align: center;
+  font-family: Plus Jakarta Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
   display: inline-block;
   text-align: center;
   padding: 30px;
@@ -277,7 +288,14 @@ body {
   padding: 30px;
 }
 .logo{
-  padding-top: 30px;
+  color: #4681F4;
+text-align: center;
+font-family: Inter;
+font-size: 36px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+
 
 }
 .menu-toggle{
@@ -292,10 +310,12 @@ body {
   .header .container {
     
     display: flex;
-    justify-content: space-between;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1); 
   }
-.menu,.secondary-menu{
+ .h1{
+  padding-bottom: 15px;
+ }
+.secondary-menu{
   display: none;
 }
 .menu-toggle {
@@ -311,18 +331,40 @@ body {
   display: block;
 }
 
-.menu, .secondary-menu {
-  display: none;
+.header .menu {
+  display: none; 
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  width: 250px; 
+  height: 100%;
+  transition: transform 0.3s;
+  transform: translateX(100%);
+}
+
+.menu.active {
+  margin-right: 600px;
+  display: block;
+
+}
+.menu-button{
+
+  display: flex;
+  padding-top: 15px;
+
+
+
 }
 
 
-.menu-active {
+}
+#menu-main-navigation{
   display: flex;
-  position: relative;
-
+  height: 70px;
 }
   
-  }
+
 
 /*
 	==========================================
