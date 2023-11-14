@@ -1,9 +1,58 @@
+/* 
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('..../fonts/PlusJakartaSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+} 
+*/
+/* Light */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/PlusJakartaSans-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+/* Regular */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/PlusJakartaSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/PlusJakartaSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/PlusJakartaSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+/* Extra Bold */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/PlusJakartaSans-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+}
+
+/* Italic (example) */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/PlusJakartaSans-Italic.ttf') format('truetype');
+  font-style: italic;
+}
+
 html,
 body {
     margin: 0;
     color: #333;
     background: #fcfcfc;
-    font: sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     padding: 0;
 }
 
@@ -525,7 +574,7 @@ justify-content: flex-end;
   font-family: Plus Jakarta Sans;
   font-size: 48px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: normal;
 }
 
@@ -541,7 +590,9 @@ justify-content: flex-end;
 .banner-search-main {
   background-color:;
   border-radius: 6px;
-
+  font-family: Plus Jakarta Sans;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .banner-search {

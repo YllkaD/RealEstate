@@ -282,7 +282,7 @@
                     'preview_size' => 'medium',
                 ),
             ),
-            
+           
             
             'location' => array(
                 array(

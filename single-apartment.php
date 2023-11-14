@@ -41,8 +41,6 @@ if ( have_posts() ) {
                 }
                 ?>
 
-          
-
         </div>
 
 <?php

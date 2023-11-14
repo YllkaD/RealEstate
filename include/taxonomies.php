@@ -1,6 +1,5 @@
 <?php 
          
-    // Register Apartment Type Taxonomy
     function register_apartment_type_taxonomy() {
         $labels = array(
             'name' => 'Apartment Types',
@@ -24,12 +23,12 @@
         $args = array(
             'labels' => $labels,
             'public' => true,
-            'hierarchical' => true, // Set to true if you want it to behave like categories, false for tags
+            'hierarchical' => true, 
             'show_in_nav_menus' => true,
             'show_admin_column' => true,
             'show_ui' => true,
             'query_var' => true,
-            'rewrite' => array('slug' => 'apartment-type'), // Customize the slug if needed
+            'rewrite' => array('slug' => 'apartment-type'), 
         );
     
         register_taxonomy('apartment_type', 'apartment', $args);
@@ -37,7 +36,6 @@
     
     add_action('init', 'register_apartment_type_taxonomy');
     
-    // Register Availability Status Taxonomy
     function register_availability_status_taxonomy() {
         $labels = array(
             'name' => 'Availability Statuses',
@@ -61,12 +59,12 @@
         $args = array(
             'labels' => $labels,
             'public' => true,
-            'hierarchical' => true, // Set to true if you want it to behave like categories, false for tags
+            'hierarchical' => true, 
             'show_in_nav_menus' => true,
             'show_admin_column' => true,
             'show_ui' => true,
             'query_var' => true,
-            'rewrite' => array('slug' => 'availability-status'), // Customize the slug if needed
+            'rewrite' => array('slug' => 'availability-status'), 
         );
     
         register_taxonomy('availability_status', 'apartment', $args);
@@ -74,7 +72,7 @@
     
     add_action('init', 'register_availability_status_taxonomy');
 
-    // Register Nearby Attractions Taxonomy
+    
 function register_nearby_attractions_taxonomy() {
     $labels = array(
         'name' => 'Nearby Attractions',
@@ -98,12 +96,12 @@ function register_nearby_attractions_taxonomy() {
     $args = array(
         'labels' => $labels,
         'public' => true,
-        'hierarchical' => false, // Set to false if you don't want it to behave like categories
+        'hierarchical' => false, 
         'show_in_nav_menus' => true,
         'show_admin_column' => true,
         'show_ui' => true,
         'query_var' => true,
-        'rewrite' => array('slug' => 'nearby-attractions'), // Customize the slug if needed
+        'rewrite' => array('slug' => 'nearby-attractions'), 
     );
 
     register_taxonomy('nearby_attractions', 'apartment', $args);
