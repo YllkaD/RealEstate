@@ -1,6 +1,5 @@
 <?php
 get_header();
-
 if ( have_posts() ) {
     while ( have_posts() ) {
         the_post();
@@ -15,21 +14,24 @@ if ( have_posts() ) {
             <p>Price: <?php the_field('price'); ?> $ </p>
             <p>Area: <?php the_field('area'); ?> sq m</p>
 
+            <h2>Features</h2>
             <h2>Features: </h2>
             <ul>
                 <?php
                 $features = get_field('features');
-                if ($features) {
-                    foreach ($features as $feature) {
-                        echo '<li>' . $feature . '</li>';
-                    }
-                }
                 ?>
             </ul>
 
+            <h2>Gallery</h2>
+            <?php
+            $gallery = get_field('gallery');
+            if ($gallery) {
+                echo '<div class="gallery">';
+                foreach ($gallery as $image) {
+                    echo '<img src="' . $image['sizes']['medium'] . '" alt="' . $image['alt'] . '" />';
             <h2>Gallery: </h2>
                  <?php
-            
+
                 $gallery_images = get_field('gallery');
 
                 if ($gallery_images) {
@@ -39,13 +41,23 @@ if ( have_posts() ) {
                     }
                     echo '</div>';
                 }
+                echo '</div>';
+            }
+            ?>
                 ?>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8f069da2675d47b9a556f54f31c288678697172f
         </div>
 
 <?php
     }
 }
-
 get_footer();
 ?>
+
+    </div>
+</div>

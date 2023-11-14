@@ -67,16 +67,6 @@ body {
     padding: 56px 53px;
   }
 
-  .faq h1 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin: 0px 0 53px 0px;
-  }
-
   .faq-text button {
     height: 64px;
   }
@@ -89,43 +79,47 @@ body {
     text-align: left;
     outline: none;
     transition: 0.4s;
+    
   }
-
-  .faq  h1 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 34px;
-    font-weight: 400;
-    line-height: 22.68px;
-    padding: 26px 0 19px 42px;
-  }
-  .faq  h2 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 22.68px;
-    padding: 26px 0 19px 42px;
-  }
-  .faq  h3 {
+  .title p,
+  .title h1,
+  .title h2,
+  .title h3,
+  .title h4,
+  .title h5,
+  .title h6{
     color: #000;
     font-family: Plus Jakarta Sans;
     font-size: 24px;
-    font-weight: 400;
-    line-height: 22.68px;
-    padding: 26px 0 19px 42px;
-  }
-  .faq  h4 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 20px;
-    font-weight: 500;
     font-style: normal;
-    line-height: 25.2px;
-    padding: 24px 0 0 42px;
+    font-weight: 600;
+    line-height: normal;
+    padding: 26px 0 35px 0px;
+    text-decoration-line: underline;
   }
-  .faq  h5 {
-    color: #545454;;
+  .faq-text .accordion p,
+  .faq-text .accordion h1,
+  .faq-text .accordion h2,
+  .faq-text .accordion h3, 
+  .faq-text .accordion h4, 
+  .faq-text .accordion h5,
+  .faq-text .accordion h6  {
+      color: #000;
+      font-family: Plus Jakarta Sans;
+      font-size: 20px;
+      font-weight: 500;
+      font-style: normal;
+      line-height: 25.2px;
+      padding: 19.5px 0 0 42px;
+  }
+  .faq-text .answer p,
+  .faq-text .answer h1,
+  .faq-text .answer h2,
+  .faq-text .answer h3, 
+  .faq-text .answer h4, 
+  .faq-text .answer h5,
+  .faq-text .answer h6 {
+    color: #545454;
     font-family: Plus Jakarta Sans;
     font-size: 18px;
     font-weight: 400;
@@ -133,48 +127,11 @@ body {
     padding: 5px 0 19px 42px;
     width: 88%;
   }
-  .faq  h6 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 22.68px;
-    padding: 26px 0 19px 42px;
-  }
-  .title h1{
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 34px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    padding: 26px 0 0px 0px;
-  }
-  .title h2{
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    padding: 26px 0 40px 0px;
-  }
-  .title h3{
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    padding: 26px 0 40px 0px;
-  }
   
-  
-
   .faq-text {
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
 
   .accordion:after {
@@ -185,6 +142,7 @@ body {
     font-size: 25px;
     float: right;
     transform: translateY(-80%);
+    padding-bottom: 5px;
   }
 
   .active:after {
@@ -209,21 +167,56 @@ body {
     background: #FFF;
     padding: 20px 20px;
   }
-  .faq-section .container{
-    max-width: 1200px;
+  
+  
+  .faq-text button {
+    height: 22px;
   }
-  .faq h1 {
+
+  .title p,
+  .title h1,
+  .title h2,
+  .title h3,
+  .title h4,
+  .title h5,
+  .title h6{
     color: #000;
     font-family: Plus Jakarta Sans;
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    margin: 0px 0 53px 0px;
+    padding: 26px 0 35px 0px;
+    text-decoration-line: underline;
   }
-
-  .faq-text button {
-    height: 22px;
+  .faq-text .accordion p,
+  .faq-text .accordion h1,
+  .faq-text .accordion h2,
+  .faq-text .accordion h3, 
+  .faq-text .accordion h4, 
+  .faq-text .accordion h5,
+  .faq-text .accordion h6  {
+    color: #000;
+    font-family: Plus Jakarta Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .faq-text .answer p,
+  .faq-text .answer h1,
+  .faq-text .answer h2,
+  .faq-text .answer h3, 
+  .faq-text .answer h4, 
+  .faq-text .answer h5,
+  .faq-text .answer h6 {
+    color: #545454;
+    font-family: Plus Jakarta Sans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 10px;
   }
 
   .accordion {
@@ -236,97 +229,11 @@ body {
     transition: 0.4s;
   }
 
-  .faq  h1 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 34px;
-    font-weight: 400;
-    line-height: 22.68px;
-    
-  }
-  .faq  h2 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 22.68px;
-    
-  }
-  .faq  h3 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 22.68px;
-   
-  }
-  .faq  h4 {
-    color: #000;
-  font-family: Plus Jakarta Sans;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  }
-  .faq  h5 {
-    color: #545454;
-    font-family: Plus Jakarta Sans;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    
-  }
-  .faq  h6 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 22.68px;
-    padding: 26px 0 19px 42px;
-  }
-  .title h1{
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    padding: 15px 0 15px 0px;
-  }
-  .title h2{
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    padding: 15px 0 15px 0px;
-  }
-  .title h3{
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    padding: 15px 0 15px 0px;
-  }
-  .title h3{
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    padding: 15px 0 15px 0px;
-  }
 
-  .faq-text {
+  .faq-text .answer {
     border-bottom: 1px solid rgba(0, 0, 0, 0.50);
-    
     overflow: hidden;
-    margin-bottom: 10px;
+    width: 100%;
   }
 
   .accordion:after {
@@ -387,23 +294,34 @@ body {
   
 
 .header{
-
+  padding-top: 10px;
   display: flex;
   position: relative;
+  height: 97px;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
 
 .header .container{
   
   display: flex;
   justify-content: space-between;
+  
 }
 
-.menu {
+.header .menu {
   display: flex;
   position: relative;
   padding-left: 30px;
 }
-.menu li {
+.header .menu li {
+  color: #000;
+  text-align: center;
+  font-family: Plus Jakarta Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
   display: inline-block;
   text-align: center;
   padding: 30px;
@@ -419,7 +337,14 @@ body {
   padding: 30px;
 }
 .logo{
-  padding-top: 30px;
+  color: #4681F4;
+text-align: center;
+font-family: Inter;
+font-size: 36px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+
 
 }
 .menu-toggle{
@@ -434,10 +359,12 @@ body {
   .header .container {
     
     display: flex;
-    justify-content: space-between;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1); 
   }
-.menu,.secondary-menu{
+ .h1{
+  padding-bottom: 15px;
+ }
+.secondary-menu{
   display: none;
 }
 .menu-toggle {
@@ -453,18 +380,40 @@ body {
   display: block;
 }
 
-.menu, .secondary-menu {
-  display: none;
+.header .menu {
+  display: none; 
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  width: 250px; 
+  height: 100%;
+  transition: transform 0.3s;
+  transform: translateX(100%);
+}
+
+.menu.active {
+  margin-right: 600px;
+  display: block;
+
+}
+.menu-button{
+
+  display: flex;
+  padding-top: 15px;
+
+
+
 }
 
 
-.menu-active {
+}
+#menu-main-navigation{
   display: flex;
-  position: relative;
-
+  height: 70px;
 }
   
-  }
+
 
 /*
 	==========================================
@@ -473,7 +422,7 @@ body {
 */
 
 footer{
- 
+
 
 }
 
@@ -643,66 +592,85 @@ justify-content: flex-end;
 
 
 
-  /*
+ /*
 	==========================================
 	 carousel
 	==========================================
 */
+.carousel .title-carousel p,
+.carousel .title-carousel h1,
+.carousel .title-carousel h3,
+.carousel .title-carousel h4,
+.carousel .title-carousel h5,
+.carousel .title-carousel h6{
+  color: #040303;
+font-family: Raleway;
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
 
+.carousel .img-gap img{
+  width: 503px;
+ height: 345px;
+ border-radius: 10px;
+ flex-shrink: 0;
+ z-index: 1;
+}
+.carousel .slick-carousel .carousel-image {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
-.carousel .title h1 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 34px;
-    font-weight: 400;
-    line-height: 22.68px;
-    padding: 26px 0 19px 42px;
-    text-align: center;
+.carousel .slick-carousel .carousel-image img {
+  width: 100%;
+}
+.slick-track{
+  padding: 122px 0 63px 0;
+}
+.carousel .slick-prev:before {
+  content: ""; 
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="34" viewBox="0 0 18 34" fill="none"><path d="M17.3117 0.748392C17.7524 1.22773 18 1.87777 18 2.55556C18 3.23334 17.7524 3.88338 17.3117 4.36272L5.67462 17.0154L17.3117 29.6681C17.7399 30.1502 17.9769 30.7959 17.9715 31.4661C17.9662 32.1363 17.7189 32.7774 17.283 33.2513C16.8472 33.7253 16.2575 33.9941 15.6411 33.9999C15.0247 34.0057 14.4309 33.7481 13.9875 33.2825L0.688318 18.8226C0.247589 18.3433 0 17.6932 0 17.0154C0 16.3376 0.247589 15.6876 0.688318 15.2083L13.9875 0.748392C14.4283 0.269197 15.0262 0 15.6496 0C16.273 0 16.8708 0.269197 17.3117 0.748392Z" fill="%23545454"/></svg>') center/contain no-repeat;
+
+}
+.carousel .slick-next:before{
+  content: ""; 
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='34' viewBox='0 0 18 34' fill='none'%3E%3Cpath d='M0.688318 0.748392C0.247589 1.22773 0 1.87777 0 2.55556C0 3.23334 0.247589 3.88338 0.688318 4.36272L12.3254 17.0154L0.688318 29.6681C0.260079 30.1502 0.0231183 30.7959 0.0284747 31.4661C0.0338311 32.1363 0.281076 32.7774 0.716955 33.2513C1.15284 33.7253 1.74248 33.9941 2.35888 33.9999C2.97528 34.0057 3.56913 33.7481 4.01252 33.2825L17.3117 18.8226C17.7524 18.3433 18 17.6932 18 17.0154C18 16.3376 17.7524 15.6876 17.3117 15.2083L4.01252 0.748392C3.57166 0.269197 2.9738 0 2.35042 0C1.72704 0 1.12918 0.269197 0.688318 0.748392Z' fill='%23545454'/%3E%3C/svg%3E") center/contain no-repeat;
+  
+}
+.carousel .slick-dots{
+  top: 20px;
+  position: relative;
+  margin: 0 auto;
+  width: 10%;
+}
+.carousel .slick-prev{
+  top: 102%;
+  left: 41%;
+}
+.carousel .slick-next{
+  top: 102%;
+  right: 41%;
+}
+
+  /*
+	==========================================
+	 carousel Modile
+	==========================================
+*/
+
+@media (max-width: 1279px) {
+  .carousel {
+      display: none;
   }
-  .carousel .title  h2 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 22.68px;
-    padding: 26px 0 19px 42px;
-     text-align: center;
-  }
-  .carousel .title  h3 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 22.68px;
-    padding: 26px 0 19px 42px;
-     text-align: center;
-  }
-  .carousel .title  h4 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 20px;
-    font-weight: 500;
-    font-style: normal;
-    line-height: 25.2px;
-    padding: 24px 0 0 42px;
-     text-align: center;
-  }
-  .carousel .title  h5 {
-    color: #545454;;
-    font-family: Plus Jakarta Sans;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 22.68px;
-    padding: 5px 0 19px 42px;
-     text-align: center;
-    width: 88%;
-  }
-  .carousel .title  h6 {
-    color: #000;
-    font-family: Plus Jakarta Sans;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 22.68px;
-    padding: 26px 0 19px 42px;
-     text-align: center;
-  }
+}
+  /* --------------------------------------------------------------------------------------- */
+
+  

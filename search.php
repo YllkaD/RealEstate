@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php 
+/*
+Template Name: Custom Search
+*/
+get_header(); ?>
+
 
 <div class="container mx-auto p-4">
 
@@ -9,7 +14,7 @@
             <?php while (have_posts()) : the_post(); ?>
                 <div class="bg-white rounded-lg p-4 shadow-md">
                     <?php
-                    // Check if the post has a featured image (post thumbnail)
+	
                     if (has_post_thumbnail()) {
                         ?>
                         <a href="<?php the_permalink(); ?>">
@@ -22,8 +27,6 @@
                     $gallery[]=$gallery;
                     $gallery = get_field('gallery');
                     
-
-                    
                     ?>
                     
                     <img src="<?php echo $gallery; ?>" alt="<?php echo $gallery; ?>" class="h-auto max-w-lg transition-all duration-300 rounded-lg cursor-pointer" >
@@ -31,11 +34,10 @@
                     <h2 class="text-xl font-semibold"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
                     <?php
-                    // Retrieve the label for the "Bedrooms" ACF field dynamically
                     $bedrooms_field = get_field_object('bedrooms');
                     $bedrooms_label = $bedrooms_field['label'];
 
-                    // Output the label and value
+                    
                     ?>
                     <p class="text-gray-700"><?php echo esc_html($bedrooms_label); ?>: <?php echo get_post_meta(get_the_ID(), 'bedrooms', true); ?></p>
 
@@ -55,3 +57,4 @@
 </div>
 
 <?php get_footer(); ?>
+
