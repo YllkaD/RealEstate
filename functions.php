@@ -16,7 +16,6 @@ function reale_state(){
     register_nav_menu( 'primary', 'Primary Nav Menu'); 
     register_nav_menu( 'secondary', 'Secondary Nav Menu');
 	register_nav_menu('third','Footer Nav Menu');
-    register_nav_menu('fourth','Footer Right');
 }
 
 add_action( 'init', 'reale_state');
