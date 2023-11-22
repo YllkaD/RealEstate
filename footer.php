@@ -1,6 +1,6 @@
  <footer>
-     <div class="rectangle">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1535" height="550" viewBox="0 0 1525 500" fill="none">
+   <div class="rectangle">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1515" height="550" viewBox="0 0 1530 540" fill="none">
   <path d="M0 0H367.268L1530 505H0V0Z" fill="#F3F4F6"/>
 </svg>
 </div>
@@ -39,7 +39,7 @@
 
                     </svg>
                   </span>
-                  <h2 class=""> 0012-345-678</h2>
+                  <h2 class="">0012-345-678</h2>
                 </div>
               </div>
 
@@ -48,9 +48,31 @@
                <hr class="thin-line">
     
                
-              
-    <div class="footer-menus">
-    <div class="follow-us">
+               <div class="footer-container">        
+      <div class="footer-menus">
+    
+            <div class="footer-left">
+                  <?php wp_nav_menu
+               (array(
+             'theme_location'=>'third'
+         
+             )
+            ); ?>
+           </div>   
+
+           
+           
+           <div class="footer-right">
+                  <?php wp_nav_menu
+               (array(
+             'theme_location'=>'fourth'
+         
+             )
+            ); ?>
+           </div>
+           </div>
+
+           <div class="follow-us">
         <h2 class="">Follow us</h2>
            <div class="social-icons">
            <a href="https://facebook.com">
@@ -96,18 +118,13 @@
         </a>
         </div>
         </div>
-            <div class="footer-left">
-                  <?php wp_nav_menu
-               (array(
-             'theme_location'=>'third'
-         
-             )
-            ); ?>
-           </div>        
     </div>
+    
+
+    
   
            <div class="rights">
-            <span class="">© 2023 <a href="http://localhost/wordpress/">KeyReside™</a>. All Rights Reserved.
+            <span class="">© 2023 <a href="http://localhost/wordpress/"></a>All Rights Reserved
              </span>                  
             </a>
             </div>
