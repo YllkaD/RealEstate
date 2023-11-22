@@ -422,9 +422,8 @@ line-height: normal;
 */
 
 .footer, .rectangle{
-  position:absolute;
+  position: absolute;
   pointer-events: none;
-  
 }
 
 
@@ -455,13 +454,12 @@ line-height: normal;
   flex-direction: column; 
   align-items: start;
   float: inline-end;
-  margin-right: 80px;
+  margin-right: 60px;
   
 }
 
 .footer, .contact-row {
   color: #000;
-  text-align: center;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -485,28 +483,6 @@ line-height: normal;
 }
 
 
-.footer, .follow-us {
-  color: #000;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-align:center;
-  float: right;
-  margin-top: 15px;
-}
-
-
-
-.footer, .social-icons{
-  display: flex;
-  filter: drop-shadow(0px 8px 24px rgba(24, 39, 75, 0.08))drop-shadow(0px 6px 12px rgba(24, 39, 75, 0.12));
-  float: right;
-  margin-top: 5px;
-  margin-right: 90px;
- 
-}
-
 .footer, .btn{
   display: flex;
   width: 222px;
@@ -527,44 +503,98 @@ line-height: normal;
   
 }
 
+.footer-container {
+  display: flex;
+justify-content: space-between;
+  align-items: center;
+  width: 1470px;
+}
+
  .footer-menus{
-  margin-top: 80px;
-  margin-left: 20px;
- 
+
+  margin-left: 80px;
+  display: flex;
+position: relative;
+
  }
 
  .footer-left{
   color: #000;
-  font-family: Roboto;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin-top: 80px;
-  margin-left: 30px;
-  
+  margin-left: 80px;
+ 
  }
 
 .footer-left ul ul li {
   color: #000;
-  font-family: Roboto;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-top: 15px;
+
 
 }
 
- .footer-left li {
- margin: 11px;
- padding: 11px;
 
+.footer-left, .footer-right{
+  margin-right: 70px;
 }
 
+ .footer-right{
+
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 80px;
+    margin-left: 50px;
+    
+  
+ }
+
+ .footer-right ul ul li {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 15px;
+}
+
+.footer, .follow-us {
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align:center;
+  float: right;
+  margin-top: 10px;
+}
+
+.follow-us, h2{
+  width: 120px;
+}
+
+
+
+
+.footer, .social-icons{
+  display: flex;
+  filter: drop-shadow(0px 8px 24px rgba(24, 39, 75, 0.08))drop-shadow(0px 6px 12px rgba(24, 39, 75, 0.12));
+  float: right;
+
+ 
+}
 
 .footer, .rights{
   color: #000;
-  font-family: Roboto;
   font-size: 12px;
   font-style: normal;
   font-weight: 300;
@@ -572,12 +602,12 @@ line-height: normal;
   display: inline;
   z-index: 1;
   margin-left: 100px;
-  position: absolute;
+  position:absolute;
+  margin-top: 90px;
 }
 
 .footer, .policy{
   color: #000;
-  font-family: Roboto;
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -587,6 +617,7 @@ line-height: normal;
   float: right;
   margin-right: 80px;
   position: relative;
+  margin-top: 90px;
 }
 
 .footer, .policy a{
@@ -598,6 +629,7 @@ line-height: normal;
   display: none;
 }
 
+  
 /*
 	==========================================
 	 Banner
