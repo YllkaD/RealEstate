@@ -141,6 +141,8 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAz5-j_OXF1whAsbYA3oiqumQuJPhnnvak&callback=Function.prototype"></script>
+
 
 <script>
     $('.slick-carousel').slick({

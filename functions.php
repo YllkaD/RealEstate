@@ -51,3 +51,11 @@ function custom_search_result($query){
 
 }
 add_action('pre_get_posts','custom_search_result');
+
+
+function my_acf_google_map_api( $api ){
+    $api['key'] = 'AIzaSyAz5-j_OXF1whAsbYA3oiqumQuJPhnnvak';
+    return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+?>
