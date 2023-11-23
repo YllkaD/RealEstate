@@ -16,7 +16,7 @@ get_header(); ?>
             get_template_part( 'template-parts/content', 'page' );
 
             
-            <?php
+        
             
             $gallery_images = get_field('gallery');
 
@@ -27,12 +27,6 @@ get_header(); ?>
                 }
                 echo '</div>';
             }
-            ?>
-
-
-            if ( comments_open() || get_comments_number() ) :
-                comments_template();
-            endif;
 
         endwhile;
         ?>
