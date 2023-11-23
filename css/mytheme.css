@@ -96,6 +96,7 @@ body {
     line-height: normal;
     padding: 26px 0 35px 0px;
     text-decoration-line: underline;
+    width: 100%;
   }
   .faq-text .accordion p,
   .faq-text .accordion h1,
