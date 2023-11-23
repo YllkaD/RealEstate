@@ -422,25 +422,25 @@ line-height: normal;
 	==========================================
 */
 
-.footer, .rectangle{
+.footer .rectangle{
   position: absolute;
   pointer-events: none;
 
 }
 
 
-.footer, .footer-logo{
+.footer .footer-logo{
   display: flex;
   padding-top: 60px;
   padding-left: 100px;
   gap: 10px;
   
 }
-.footer, .logo-k{
+.footer .logo-k{
   margin-top: 10px;
   z-index: 1;
 }
-.footer, .keyreside{
+.footer .keyreside{
   color: #4681F4;
   font-family: Inter;
   font-size: 36px;
@@ -451,7 +451,7 @@ line-height: normal;
   margin-top: 10px;
 
 }
-.footer, .contact-icons {
+.footer .contact-icons {
   display: flex;
   flex-direction: column; 
   align-items: start;
@@ -460,7 +460,7 @@ line-height: normal;
   
 }
 
-.footer, .contact-row {
+.footer .contact-row {
   color: #000;
   font-size: 12px;
   font-style: normal;
@@ -473,7 +473,7 @@ line-height: normal;
 }
 
 
-.footer, .thin-line{
+.footer .thin-line{
   width: 88%;
   height: 1.8px;
   background: #B1B5BB;
@@ -485,7 +485,7 @@ line-height: normal;
 }
 
 
-.footer, .btn{
+.footer .btn{
   display: flex;
   width: 222px;
   height: 50px;
@@ -514,14 +514,14 @@ line-height: normal;
 
 
 
-.footer, .menu-item{
+.footer .menu-item{
   width: 150px;
   margin-right: 70px;
 }
 
- .footer, .menu{
+ .footer .menu{
   display: flex;
-  margin-left: 90px;
+  margin-left: 80px;
   
  }
 
@@ -532,7 +532,7 @@ line-height: normal;
   font-weight: 700;
   line-height: normal;
   margin-top: 70px;
-  margin-left: 60px;
+  margin-left: 80px;
   z-index: 1;
  }
 
@@ -548,7 +548,7 @@ line-height: normal;
 }
 
 
-.footer, .follow-us {
+.footer .follow-us {
   color: #000;
   font-size: 16px;
   font-style: normal;
@@ -559,12 +559,12 @@ line-height: normal;
   margin-top: 10px;
 }
 
-.follow-us, h2{
+.follow-us h2{
   width: 120px;
 }
 
 
-.footer, .social-icons{
+.footer .social-icons{
   display: flex;
   filter: drop-shadow(0px 8px 24px rgba(24, 39, 75, 0.08))drop-shadow(0px 6px 12px rgba(24, 39, 75, 0.12));
   float: right;
@@ -572,7 +572,7 @@ line-height: normal;
  
 }
 
-.footer, .rights{
+.footer .rights{
   color: #000;
   font-size: 12px;
   font-style: normal;
@@ -585,7 +585,7 @@ line-height: normal;
   margin-top: 90px;
 }
 
-.footer, .policy{
+.footer .policy{
   color: #000;
   font-size: 14px;
   font-style: normal;
@@ -599,12 +599,12 @@ line-height: normal;
   margin-right: 60px;
 }
 
-.footer, .policy a{
+.footer .policy a{
  margin-right: 40px;
   
 }
 
-.footer, .sales-map{
+.footer .sales-map{
   display: none;
 }
 

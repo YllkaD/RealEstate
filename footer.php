@@ -1,4 +1,4 @@
-<footer class="container">
+<footer class="container footer mx-auto">
 
 <div class="rectangle">
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="505" viewBox="0 0 1440 505" fill="none">
