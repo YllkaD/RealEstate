@@ -423,7 +423,6 @@ line-height: normal;
 */
 
 .footer, .rectangle{
-  flex-shrink: 0;
   position: absolute;
   pointer-events: none;
 
@@ -508,19 +507,22 @@ line-height: normal;
 
 .footer-container {
   display: flex;
-justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
-  width: 96%;
+  width: 95%;
 }
 
 
 
 .footer, .menu-item{
   width: 150px;
+  margin-right: 70px;
 }
 
  .footer, .menu{
   display: flex;
+  margin-left: 90px;
+  
  }
 
  .footer-left{
@@ -529,9 +531,9 @@ justify-content: space-between;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: 80px;
+  margin-top: 70px;
+  margin-left: 60px;
   z-index: 1;
-;
  }
 
 .footer-left ul ul li {

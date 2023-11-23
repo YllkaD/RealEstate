@@ -2,7 +2,7 @@
 
 <div class="rectangle">
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="505" viewBox="0 0 1440 505" fill="none">
-<path d="M0 0H447.812L1440 505H0V0Z" fill="#F3F4F6"/>
+  <path d="M0 0H447.812L1440 505H0V0Z" fill="#F3F4F6"/>
 </svg>
 </div>
 
