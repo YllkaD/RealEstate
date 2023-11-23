@@ -432,7 +432,7 @@ line-height: normal;
 .footer .footer-logo{
   display: flex;
   padding-top: 60px;
-  padding-left: 50px;
+  padding-left: 70px;
   gap: 10px;
   
 }
@@ -470,18 +470,6 @@ line-height: normal;
   align-items: center; 
   gap: 10px;
   margin-right: 70px;
-}
-
-
-.footer .thin-line{
-  width: 88%;
-  height: 1.8px;
-  background: #B1B5BB;
-  box-shadow: 0px 8px 8px -4px rgba(24, 39, 75, 0.08), 0px 4px 6px -4px rgba(24, 39, 75, 0.12);
-  margin-top: 48px;
-  margin-left:90px;
-  position: absolute;
-  z-index: 1;
 }
 
 
@@ -524,7 +512,7 @@ line-height: normal;
 
  .footer .menu{
   display: flex;
-  margin-left: 50px;
+  margin-left: 70px;
   
  }
 
