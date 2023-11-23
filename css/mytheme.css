@@ -423,8 +423,10 @@ line-height: normal;
 */
 
 .footer, .rectangle{
+  flex-shrink: 0;
   position: absolute;
   pointer-events: none;
+
 }
 
 
@@ -473,7 +475,7 @@ line-height: normal;
 
 
 .footer, .thin-line{
-  width: 1355px;
+  width: 88%;
   height: 1.8px;
   background: #B1B5BB;
   box-shadow: 0px 8px 8px -4px rgba(24, 39, 75, 0.08), 0px 4px 6px -4px rgba(24, 39, 75, 0.12);
@@ -508,15 +510,17 @@ line-height: normal;
   display: flex;
 justify-content: space-between;
   align-items: center;
-  width: 1470px;
+  width: 96%;
 }
 
- .footer-menus{
 
-  margin-left: 80px;
+
+.footer, .menu-item{
+  width: 150px;
+}
+
+ .footer, .menu{
   display: flex;
-position: relative;
-
  }
 
  .footer-left{
@@ -526,8 +530,8 @@ position: relative;
   font-weight: 700;
   line-height: normal;
   margin-top: 80px;
-  margin-left: 80px;
- 
+  z-index: 1;
+;
  }
 
 .footer-left ul ul li {
@@ -541,32 +545,6 @@ position: relative;
 
 }
 
-
-.footer-left, .footer-right{
-  margin-right: 70px;
-}
-
- .footer-right{
-
-    color: #000;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-top: 80px;
-    margin-left: 50px;
-    
-  
- }
-
- .footer-right ul ul li {
-  color: #000;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-top: 15px;
-}
 
 .footer, .follow-us {
   color: #000;
@@ -582,8 +560,6 @@ position: relative;
 .follow-us, h2{
   width: 120px;
 }
-
-
 
 
 .footer, .social-icons{
@@ -616,19 +592,20 @@ position: relative;
   display: inline;
   z-index: 1;
   float: right;
-  margin-right: 80px;
   position: relative;
   margin-top: 90px;
+  margin-right: 60px;
 }
 
 .footer, .policy a{
-  margin-right: 30px;
+ margin-right: 40px;
   
 }
 
 .footer, .sales-map{
   display: none;
 }
+
 
   
 /*
