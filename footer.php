@@ -5,21 +5,37 @@
   <path d="M0 0H447.812L1440 505H0V0Z" fill="#F3F4F6"/>
 </svg>
 </div>
+
+<div class="rectangle-mobile">
+<svg xmlns="http://www.w3.org/2000/svg" width="381" height="450" viewBox="0 0 381 450" fill="none">
+  <path d="M0 0H72L387.5 450H0V0Z" fill="#F3F4F6"/>
+</svg>
+</div>
 <div class="container mx-auto">
 <div class="contact-button">
  <a href="#" class="btn btn--contact">Contact Us</a>   
 </div>
   
-         <div class="footer-logo">            
+         <div class="footer-logo">
+                    
           <div class="logo-k">
              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="36" viewBox="0 0 45 36" fill="none">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7459 36H26.5815L23.0665 22.7284L16.1354 26.6874L12.7459 36ZM35.0722 36H45V11.27L30.5276 19.3733L35.0722 36ZM45 2.41403V0H25.8488L19.9986 16.0732L20.5325 16.2675L44.9111 2.38166L45 2.41403ZM16.8758 0H0V36H3.7729L16.8758 0Z" fill="#4681F4"/>
 </svg>
      </div>
+     <div class="logo-mobile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M23.0005 0H0.000488281V18H14.2543L12.2806 17.2816L10.3356 9.93773L8.16962 11.1749L6.68785 15.246L4.21182 14.3448L9.18666 0.676585L11.6627 1.57779L9.37689 7.85798L9.54374 7.91871L17.162 3.57938L20.1853 4.67978L12.6672 8.88928L15.1574 18H23.0005V0Z" fill="#4681F4"/>
+</svg>
+     </div> 
      <div class="keyreside"> 
                  <h1 class="">KeyReside</h1>
      </div>
+
+     
             </div>
+
+            
            
             <div class="contact-icons">
              <div class="contact-row">
@@ -45,17 +61,15 @@
            </div>
 
     
-            <div class="footer-container">        
-   
- 
-         <div class="footer-left">
-               <?php wp_nav_menu
-            (array(
-          'theme_location'=>'third'
-      
-          )
-         ); ?>
-        </div>   
+            <div class="footer-second">       
+              <div class="footer-left">
+                    <?php wp_nav_menu
+                  (array(
+                'theme_location'=>'third'
+            
+                )
+              ); ?>
+              </div>   
 
 
         <div class="follow-us">

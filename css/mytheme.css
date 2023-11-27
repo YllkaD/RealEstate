@@ -457,7 +457,8 @@ line-height: normal;
   align-items: start;
   float: inline-end;
   margin-right: 60px;
-  
+  margin-bottom:10px;
+  gap: 10px;
 }
 
 .footer .contact-row {
@@ -488,16 +489,16 @@ line-height: normal;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
   float: right;
   margin-right: 100px;
-  margin-top: 40px;
+  margin-top: 35px;
  
   
 }
 
-.footer-container {
+.footer-second {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 93%;
+  width: 91%;
   border-top: 2px solid  rgba(24, 39, 75, 0.12);
   position: relative;
   margin: auto;
@@ -523,7 +524,6 @@ line-height: normal;
   font-weight: 700;
   line-height: normal;
   margin-top: 70px;
-  
   z-index: 1;
  }
 
@@ -534,8 +534,6 @@ line-height: normal;
   font-weight: 400;
   line-height: normal;
   margin-top: 15px;
-
-
 }
 
 
@@ -572,8 +570,8 @@ line-height: normal;
   display: inline;
   z-index: 1;
   margin-left: 100px;
+  margin-top: 75px;
   position:absolute;
-  margin-top: 90px;
 }
 
 .footer .policy{
@@ -586,8 +584,9 @@ line-height: normal;
   z-index: 1;
   float: right;
   position: relative;
-  margin-top: 90px;
+  padding-bottom: 30px;
   margin-right: 60px;
+  margin-top: 75px;
 }
 
 .footer .policy a{
@@ -598,8 +597,147 @@ line-height: normal;
 .footer .sales-map{
   display: none;
 }
+.footer .logo-mobile{
+  display: none;
+}
+
+.footer .rectangle-mobile{
+  display: none;
+}
+
+@media screen and (max-width: 1279px){
+  
+  .footer .contact-icons{
+    display: none;
+  }
+  .footer .contact-row{
+    display: none;
+  }
+
+  .footer .rectangle{
+   display: none;
+  }
+
+  .footer .rectangle-mobile{
+    flex-shrink: 0;
+    display: inline;
+    position: absolute;
+  }
+
+  
+.footer .btn{
+  display: flex;
+  width: 112px;
+  height: 25px;
+  padding: 5px 26px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  border: 1px solid #000;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+  color: #000;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-right: 15px;
+}
+.footer .logo-k{
+ display: none;
+}
+.footer .footer-logo{
+  padding-top: 25px;
+  padding-left: 15px;
+  z-index: 1;
+  position: relative ;
+  gap: 5px;
+}
+.footer .logo-mobile{
+ z-index: 1;
+display: inline;
+margin-top: 10px;
+
+}
+.footer .keyreside{
+  color: #4681F4;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.footer .footer-second{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+.footer .menu{
+  gap: 10%;  
+ }
+
+.footer .footer-left{
+  margin-bottom: 30px;
+  margin-top: 25px;
+  justify-content: space-around;
+}
+
+.footer .policy{
+  color: #000;
+  font-size: 7.5px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 0px;
+  float: none;
+}
+
+.footer .policy a{
+  margin-right: 70px;
+}
+.footer .sales-map {
+  display: flex;
+  color: #000;
+  font-size: 7.5px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  z-index: 1;
+  position: relative;
+float: right;
+}
+
+.footer .sales-map a{
+  margin-right: 60px;
+}
+
+.footer .rights{
+  color: #000;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-top: 30px;
+  flex-basis: 100%;
+  margin-right: 20px;
+}
 
 
+  .policy,
+  .sales-map {
+      justify-content: space-evenly;
+  }
+
+
+}
   
 /*
 	==========================================
