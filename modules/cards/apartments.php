@@ -10,8 +10,8 @@ $content_module = get_sub_field('description');
   </div>
   <div class="grid grid-cols-<?=$row_cards_mobile?> md:grid-cols-<?=$row_cards_tablet?> lg:grid-cols-<?=$row_cards_desktop?> gap-4 items-start">
     <?php
-    foreach ($data as $post) :
-      $field = get_field_objects($post->ID); 
+       foreach ($data_cards as $post_inside_cards) :
+      $field = get_field_objects($post_inside_cards->ID); 
       ?>
       
       <div class="w-full rounded-xl  lg:pr-3 mt-6">
