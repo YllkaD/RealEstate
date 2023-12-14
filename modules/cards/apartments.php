@@ -11,7 +11,7 @@ $content_module = get_sub_field('description');
   <div class="grid grid-cols-<?=$row_cards_mobile?> md:grid-cols-<?=$row_cards_tablet?> lg:grid-cols-<?=$row_cards_desktop?> gap-4 items-start">
     <?php
        foreach ($data_cards as $post_inside_cards) :
-      $field = get_field_objects($post_inside_cards->ID); 
+        $field = get_field_objects($post_inside_cards->ID); 
       ?>
       
       <div class="w-full rounded-xl  lg:pr-3 mt-6">
@@ -22,7 +22,7 @@ $content_module = get_sub_field('description');
               <img src="<?= get_template_directory_uri() . '/img/apartment.jpg' ?>" alt="Apartment Image" class="object-cover h-48 w-full rounded-t-xl">
             <?php } ?>
             <div class="border shadow-2xl  rounded-b-xl p-7">
-                <h2 class="text-2xl font-bold mb-2"><?php the_title(); ?></h2>
+                <h2 class="text-2xl font-bold mb-2"><?= get_the_title($post_inside_cards)  ?></h2>
                 <div class="flex gap-4 text-gray-800 leading-relaxed">
                 <div class="flex items-center justify-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="21" height="14" viewBox="0 0 21 14" fill="none">
@@ -50,19 +50,17 @@ $content_module = get_sub_field('description');
                   <span class="text-[#545454] text-sm font-normal"><?= $field['furnished']['value']?> </span>
                 </div>
                 <div class="text-right mt-7">
-                      <a href="<?php the_permalink(); ?>" class="bg-blue-500 text-white py-3 px-10 rounded-full hover:bg-blue-600">Book Now</a>
+                      <a href="<?= get_the_permalink($post_inside_cards); ?>" class="bg-blue-500 text-white py-3 px-10 rounded-full hover:bg-blue-600">Book Now</a>
                 </div>
             </div>
           </div>
       </div>
     <?php endforeach; ?>
   </div>
-  <div class="text-center mb-80 mt-14">
+  <div class="text-center mt-14">
     <a href="#" class="bg-transparent text-white-500 border border-2 border-white-500 py-4 px-20 rounded-md font-plus-jakarta-sans text-xl focus:outline-none">Check More</a>
 </div>
 </div>
-
-
 
 
 
