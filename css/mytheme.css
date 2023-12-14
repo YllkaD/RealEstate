@@ -425,9 +425,7 @@ line-height: normal;
 .footer .rectangle{
   position: absolute;
   pointer-events: none;
-
 }
-
 
 .footer .footer-logo{
   display: flex;
@@ -449,7 +447,6 @@ line-height: normal;
   line-height: normal;
   z-index: 1;
   margin-top: 10px;
-
 }
 .footer .contact-icons {
   display: flex;
@@ -458,7 +455,7 @@ line-height: normal;
   float: inline-end;
   margin-right: 60px;
   margin-bottom:10px;
-  gap: 10px;
+  gap: 5px;
 }
 
 .footer .contact-row {
@@ -472,7 +469,6 @@ line-height: normal;
   gap: 10px;
   margin-right: 70px;
 }
-
 
 .footer .btn{
   display: flex;
@@ -490,8 +486,6 @@ line-height: normal;
   float: right;
   margin-right: 100px;
   margin-top: 35px;
- 
-  
 }
 
 .footer-second {
@@ -503,8 +497,6 @@ line-height: normal;
   position: relative;
   margin: auto;
 }
-
-
 
 .footer .menu-item{
   width: 150px;
@@ -557,8 +549,6 @@ line-height: normal;
   display: flex;
   filter: drop-shadow(0px 8px 24px rgba(24, 39, 75, 0.08))drop-shadow(0px 6px 12px rgba(24, 39, 75, 0.12));
   float: right;
-
- 
 }
 
 .footer .rights{
@@ -585,13 +575,12 @@ line-height: normal;
   float: right;
   position: relative;
   padding-bottom: 30px;
-  margin-right: 60px;
+  margin-right: 50px;
   margin-top: 75px;
 }
 
 .footer .policy a{
  margin-right: 40px;
-  
 }
 
 .footer .sales-map{
@@ -624,7 +613,6 @@ line-height: normal;
     position: absolute;
   }
 
-  
 .footer .btn{
   display: flex;
   width: 112px;
@@ -658,10 +646,9 @@ line-height: normal;
   gap: 5px;
 }
 .footer .logo-mobile{
- z-index: 1;
-display: inline;
-margin-top: 10px;
-
+  z-index: 1;
+  display: inline;
+  margin-top: 10px;
 }
 .footer .keyreside{
   color: #4681F4;
@@ -677,8 +664,6 @@ margin-top: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  
-  
 }
 .footer .menu{
   gap: 10%;  
@@ -698,25 +683,29 @@ margin-top: 10px;
   line-height: normal;
   margin-top: 0px;
   float: none;
+  display: inline;
 }
 
 .footer .policy a{
-  margin-right: 70px;
+  margin-right: 15px;
+  margin-left: 5px;
 }
+
 .footer .sales-map {
-  display: flex;
+  display: inline;
   color: #000;
   font-size: 7.5px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  z-index: 1;
+  line-height: normal; 
+  float: right;
+  margin-top: 10px;
   position: relative;
-float: right;
+  z-index: 1;
 }
 
 .footer .sales-map a{
-  margin-right: 60px;
+  margin-right: 15px;
 }
 
 .footer .rights{
@@ -726,16 +715,8 @@ float: right;
   font-weight: 300;
   line-height: normal;
   margin-top: 30px;
-  flex-basis: 100%;
-  margin-right: 20px;
+  margin-left: 5px;
 }
-
-
-  .policy,
-  .sales-map {
-      justify-content: space-evenly;
-  }
-
 
 }
   

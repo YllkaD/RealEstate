@@ -128,7 +128,8 @@
           </span>                  
          </a>
          </div>
-         
+      
+    
      <div class="policy">
          <span class="">
              <a href="privacy_policy.html">Privacy Policy </a>
