@@ -922,3 +922,60 @@ line-height: normal;
     width: 100%;
   }
  
+
+
+  .banner-container {
+    position: relative;
+    /* Other existing styles for the banner container */
+}
+
+.background-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222222; /* Dark gray color */
+    opacity: 0.7; /* Adjust the opacity as needed */
+    z-index: 1; /* Ensure the overlay is behind the text */
+}
+
+.banner-elements {
+    position: relative;
+    z-index: 2; /* Ensure the content stays above the overlay */
+    /* Other existing styles for the banner elements */
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Set your desired height */
+  background-size: cover;
+}
+
+.banner-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 7, 7, 0.7); /* Dark gray color with opacity */
+  z-index: 1; /* Ensure the overlay is behind the text */
+}
+
+.banner-elements {
+  position: relative;
+  z-index: 2; /* Ensure the content stays above the overlay */
+  color: white; /* Text color */
+  /* Other existing styles for the banner elements */
+}
+

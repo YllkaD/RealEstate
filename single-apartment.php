@@ -122,7 +122,7 @@ if ( have_posts() ) {
     </div>
 
 <!-------------------------------------------- MAP ------------------------------------------------------>
-<div class="px-24 mt-16">
+<div class="px-24 mt-16 mb-8">
     <h5 class="font-bold mb-4 ml-2">LOCATION</h5>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46940.2060114189!2d21.1587273!3d42.666380100000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ee605110927%3A0x9365bfdf385eb95a!2sPristina!5e0!3m2!1sen!2s!4v1702657960418!5m2!1sen!2s"  height="400" style="border:0; border-radius:10px; width:90vw;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
