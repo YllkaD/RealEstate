@@ -4,7 +4,7 @@ $row_cards_tablet = get_sub_field('row_cards_tablet');
 $row_cards_mobile = get_sub_field('row_cards_mobile');
 $content_module = get_sub_field('description');
 ?>
-<div class="cards-module-apartments container mx-auto  px-4 lg:px-0 py-4">
+<div style="width:90vw;" class="cards-module-apartments container mx-auto  px-4 lg:px-0 py-4">
   <div class="content_module">
     <?= $content_module ?>
   </div>

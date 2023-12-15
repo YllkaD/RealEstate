@@ -5,20 +5,68 @@ if ( have_posts() ) {
     while ( have_posts() ) {
         the_post();
 ?>
-        <!-- <div class="apartment">
-            <h1><?php the_field('title'); ?></h1>
-            <p><?php the_field('description'); ?></p>
-            <p>Bedrooms: <?php the_field('bedrooms'); ?></p>
-            <p>Bathrooms: <?php the_field('bathrooms'); ?></p>
-            <p>Pet Policy: <?php the_field('pet_policy'); ?></p>
-            <p>Furnished: <?php the_field('furnished'); ?></p>
-            <p>Price: <?php the_field('price'); ?> $ </p>
-            <p>Area: <?php the_field('area'); ?> sq m</p>
-            <p>Location: <?php the_field('address'); ?> </p>
+<!-- //header button -->
+<div style="" class="flex  justify-between gap-2 px-24 mt-16 mb-8">
+    <a href="#"><i class="fa-solid fa-arrow-left"></i> Back to search result</a>
+    <div class="gap-x-4">
+    <a href="#" class="bg-gray-200 px-4 py-2 rounded-md mx-4"><i class="fa-solid fa-arrow-up-from-bracket" style="color: #1c1c1c;"></i> Share</a>
+    <a href="#" class="bg-gray-200 px-4 py-2 rounded-md"><i class="fa-regular fa-heart" style="color: #0d0d0d;"></i> Save</a>
+    </div>
+</div>
 
-            <h2>Features: </h2>
-            <ul>
-                <?php
+
+
+<!-- gallery -->
+<div class="grid grid-cols-3 px-24 gap-2">
+    <div class="col-span-2">
+    <?php the_post_thumbnail('full'); ?>
+    </div>
+    <div class="grid col-span-1 col-row-2 gap-2">
+   
+        <img class="rounded-md" src="https://a0.muscache.com/im/pictures/miso/Hosting-523212523411973201/original/ea201062-2728-40d7-a70f-261f15cef61d.jpeg?im_w=1200" alt="">
+        <img class="rounded-md" src="https://a0.muscache.com/im/pictures/miso/Hosting-523212523411973201/original/ea201062-2728-40d7-a70f-261f15cef61d.jpeg?im_w=1200" alt="">
+    </div>
+</div>
+
+<!-- //details -->
+    <div class="grid grid-cols-3 px-24 gap-4 mt-16">
+        <div class="col-span-2">
+            <div class="price flex justify-between">
+                <h4>$<?php echo the_field('price'); ?></h4>
+                <h4><i class="fa-solid fa-location-dot"></i> <?php the_field('address'); ?></h4>
+            </div>
+            <div class="grid grid-cols-4 border-2 border-blue p-4 rounded-md mt-4">
+                <div class="">
+                    <div><p class="text-xs font-bold">PROPERTY TYPE</p></div>
+                    <div class="mt-8 gap-4"><i class="fa-regular fa-building align-middle"></i> Flat</div>
+                </div>
+                <div class="">
+                <div><p class="text-xs font-bold">SIZE</p></div>
+                    <div class="mt-8 gap-4"><i class="fa-solid fa-ruler-horizontal"></i><?php the_field('area'); ?> sqm</div>
+                </div>
+                <div class="">
+                <div><p class="text-xs font-bold">BEDROOMS</p></div>
+                    <div class="mt-8 gap-4"><i class="fa-solid fa-bed"></i> x <?php the_field('bedrooms'); ?></div>
+                </div>
+                <div class="">
+                <div><p class="text-xs font-bold">BATHROOMS</p></div>
+                    <div class="mt-8 gap-4"><i class="fa-solid fa-bath"></i> x <?php the_field('bathrooms'); ?></div>
+                </div>
+            </div>
+
+            <div class="bg-blue-200 p-6 mt-10 rounded-md">
+                ABOUT THE PROPERTY
+            </div>
+            <p class="text-sm mt-6">
+            <?php the_field('description'); ?>            </p>
+
+            <div class="bg-blue-200 p-6 mt-14 rounded-md">
+                PROPERTY FEATURES
+            </div>
+            <div class="grid grid-cols-2 mt-4">
+                <div class="col-span-1">
+                    <ul>
+                    <?php
                 $features = get_field('features');
                 if ($features) {
                     foreach ($features as $feature) {
@@ -26,127 +74,59 @@ if ( have_posts() ) {
                     }
                 }
                 ?>
-            </ul>
-
-            <h2>Gallery: </h2>
-                 <?php
-            
-                $gallery_images = get_field('gallery');
-
-                if ($gallery_images) {
-                    echo '<div class="gallery">';
-                    foreach ($gallery_images as $image_url) {
-                        echo '<img src="' . esc_url($image_url) . '" alt="" />';
-                    }
-                    echo '</div>';
-                }
-                ?>
-
-        </div>
- -->
-
- 
-
-
-
-
-<div class="container mx-auto single-apartment">
-    <div class="flex">
-        <div class="w-1/3 p-4">
-        <div class="p-6">
-        <?php if (get_field('title')) : ?>
-            <div class="text-title"><?php the_field('title'); ?></div>
-            <?php if (get_field('price')) : ?>
-            <?php
-            
-            $price = get_field('price');
-
-            $formatted_price = '€' . number_format($price);
-            ?>
-
-            <div class="price"><?php echo $formatted_price; ?></div>
-            <?php endif; ?>
-        <?php endif; ?>
-
-        <?php if (get_field('description')) : ?>
-            <div class="text-gray-600 text-sm"><?php the_field('description'); ?></div>
-        <?php endif; ?>
-
-        <div class="flex items-center mt-4">
-            <div class="w-1/2">
-                <?php if (get_field('bedrooms')) : ?>
-                    <div class="text-gray-700 text-sm"><span class="font-semibold">Bedrooms:</span> <?php the_field('bedrooms'); ?></div>
-                <?php endif; ?>
-
-                <?php if (get_field('bathrooms')) : ?>
-                    <div class="text-gray-700 text-sm"><span class="font-semibold">Bathrooms:</span> <?php the_field('bathrooms'); ?></div>
-                <?php endif; ?>
-
-                <?php if (get_field('pet_policy')) : ?>
-                    <div class="text-gray-700 text-sm"><span class="font-semibold">Pet Policy:</span> <?php the_field('pet_policy'); ?></div>
-                <?php endif; ?>
-
-                <?php if (get_field('furnished')) : ?>
-                    <div class="text-gray-700 text-sm"><span class="font-semibold">Furnished:</span> <?php the_field('furnished'); ?></div>
-                <?php endif; ?>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                <ul>
+                        <li>
+                            Number of Rooms: 3
+                        </li>
+                        <li>
+                            Private Terrace
+                        </li>
+                        <li>
+                            High Ceiling
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="w-1/2">
-                <?php if (get_field('price')) : ?>
-                    <div class="text-blue-600 font-semibold text-lg">$<?php the_field('price'); ?> </div>
-                <?php endif; ?>
-
-                <?php if (get_field('area')) : ?>
-                    <div class="text-gray-700 text-sm"><span class="font-semibold">Area:</span> <?php the_field('area'); ?> m²</div>
-                <?php endif; ?>
+            
+        </div>
+        <!-- Agent details -->
+        <div class="col-span-1 ">
+            <div class="border-2 border-blue rounded-md p-4 align-middle">
+                <div class="flex gap-5">
+                    <div style="width: 20%;" class="img">
+                        <img class="rounded-full" src="https://a0.muscache.com/im/pictures/user/b1ee903e-bd3c-4679-a90c-fa0583dd722f.jpg?im_w=240">
+                    </div>
+                    <div class="">
+                        <h3>John Doe</h3>
+                    </div>
+                </div>
+                <div class="mt-4">
+                <p class="text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam a aspernatur suscipit deleniti voluptas?</p>
+                </div>
+            <div class="mt-4">
+                <div class="phone flex gap-4">
+                <i class="fa-solid fa-phone"></i> <p class="text-sm">0123445656</p>
+                </div>
+                <div class="email flex gap-4">
+                <i class="fa-regular fa-envelope"></i><p class="text-sm"> mail@example.com</p>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-center">
+                <a class="bg-blue-400 text-white py-2 w-full rounded-md flex justify-center text-sm font-bold"  href="#">Schedule a tour</a>
+            </div>
             </div>
         </div>
-       
     </div>
-</div>
-        <div class="w-1/2 p-4">
-            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-                <!-- image - start -->
-                <a href="#"
-                    class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="Photo by Minh Pham" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
-                    <div
-                        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                    </div>
-
-                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">VR</span>
-                </a>
-            
-                <a href="#"
-                    class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-                    <img src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=1000" loading="lazy" alt="Photo by Magicle" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-
-                    <div
-                        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                    </div>
-
-                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Tech</span>
-                </a>
-        
-            </div>
-        </div>
-</div> <div>
-        <?php if (get_field('address')) : ?>
-                    <?php 
-                        $location = get_field('address');
-                        if( $location ): ?>
-                            <div class="acf-map" data-zoom="16">
-                                <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
-                            </div>
-                    <?php endif; ?>
-                <?php endif; ?>
-        </div>
-</div>
-
+<!-------------------------------------------- MAP ------------------------------------------------------>
+<div class="px-24 mt-16">
+    <h5 class="font-bold mb-4 ml-2">LOCATION</h5>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46940.2060114189!2d21.1587273!3d42.666380100000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ee605110927%3A0x9365bfdf385eb95a!2sPristina!5e0!3m2!1sen!2s!4v1702657960418!5m2!1sen!2s"  height="400" style="border:0; border-radius:10px; width:90vw;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 </div>
-
-
 <?php
     }
 }
