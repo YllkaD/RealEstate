@@ -425,7 +425,9 @@ line-height: normal;
 .footer .rectangle{
   position: absolute;
   pointer-events: none;
+
 }
+
 
 .footer .footer-logo{
   display: flex;
@@ -447,6 +449,7 @@ line-height: normal;
   line-height: normal;
   z-index: 1;
   margin-top: 10px;
+
 }
 .footer .contact-icons {
   display: flex;
@@ -455,7 +458,7 @@ line-height: normal;
   float: inline-end;
   margin-right: 60px;
   margin-bottom:10px;
-  gap: 5px;
+  gap: 10px;
 }
 
 .footer .contact-row {
@@ -469,6 +472,7 @@ line-height: normal;
   gap: 10px;
   margin-right: 70px;
 }
+
 
 .footer .btn{
   display: flex;
@@ -486,6 +490,8 @@ line-height: normal;
   float: right;
   margin-right: 100px;
   margin-top: 35px;
+ 
+  
 }
 
 .footer-second {
@@ -497,6 +503,8 @@ line-height: normal;
   position: relative;
   margin: auto;
 }
+
+
 
 .footer .menu-item{
   width: 150px;
@@ -549,6 +557,8 @@ line-height: normal;
   display: flex;
   filter: drop-shadow(0px 8px 24px rgba(24, 39, 75, 0.08))drop-shadow(0px 6px 12px rgba(24, 39, 75, 0.12));
   float: right;
+
+ 
 }
 
 .footer .rights{
@@ -575,12 +585,13 @@ line-height: normal;
   float: right;
   position: relative;
   padding-bottom: 30px;
-  margin-right: 50px;
+  margin-right: 60px;
   margin-top: 75px;
 }
 
 .footer .policy a{
  margin-right: 40px;
+  
 }
 
 .footer .sales-map{
@@ -613,6 +624,7 @@ line-height: normal;
     position: absolute;
   }
 
+  
 .footer .btn{
   display: flex;
   width: 112px;
@@ -646,9 +658,10 @@ line-height: normal;
   gap: 5px;
 }
 .footer .logo-mobile{
-  z-index: 1;
-  display: inline;
-  margin-top: 10px;
+ z-index: 1;
+display: inline;
+margin-top: 10px;
+
 }
 .footer .keyreside{
   color: #4681F4;
@@ -664,6 +677,8 @@ line-height: normal;
   width: 100%;
   display: flex;
   flex-direction: column;
+  
+  
 }
 .footer .menu{
   gap: 10%;  
@@ -683,29 +698,25 @@ line-height: normal;
   line-height: normal;
   margin-top: 0px;
   float: none;
-  display: inline;
 }
 
 .footer .policy a{
-  margin-right: 15px;
-  margin-left: 5px;
+  margin-right: 70px;
 }
-
 .footer .sales-map {
-  display: inline;
+  display: flex;
   color: #000;
   font-size: 7.5px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal; 
-  float: right;
-  margin-top: 10px;
-  position: relative;
+  line-height: normal;
   z-index: 1;
+  position: relative;
+float: right;
 }
 
 .footer .sales-map a{
-  margin-right: 15px;
+  margin-right: 60px;
 }
 
 .footer .rights{
@@ -715,8 +726,16 @@ line-height: normal;
   font-weight: 300;
   line-height: normal;
   margin-top: 30px;
-  margin-left: 5px;
+  flex-basis: 100%;
+  margin-right: 20px;
 }
+
+
+  .policy,
+  .sales-map {
+      justify-content: space-evenly;
+  }
+
 
 }
   
@@ -773,11 +792,11 @@ line-height: normal;
   border: none;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
-
+  padding: 17px 49px; 
 }
 
 .banner-btn {
-  padding: 8.5px 10px 8.5px 10px;
+  padding: 17.5px 25px 17.5px 23px;
   margin-left: -5px;
   border-radius: 0px 6px 6px 0px;
   background: #4681F4;
@@ -903,3 +922,14 @@ line-height: normal;
     width: 100%;
   }
  
+  .place-items-center{
+    margin-top:50px;
+  }
+  .page-number.active {
+    background-color: rgb(145, 144, 144);
+    color: white;
+}
+
+.active:after {
+  content: "";
+}

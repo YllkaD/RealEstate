@@ -1,32 +1,70 @@
 <?php 
-/*
-Template Name: Custom Search
-*/
-get_header(); ?>
+  /*
+  Template Name: Custom Search
+  */
+$is_search = count($_GET);
 
 
-<div class="container mx-auto p-4">
-<!-- Inside your search.php or other template file where you want to display the search form -->
-<form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
-    <label>
-        <span class="screen-reader-text">Search for:</span>
-        <input type="search" class="search-field" placeholder="Search…" value="<?php echo get_search_query(); ?>" name="s" />
+$brands=get_terms([
+  'taxonomy'=> 'apartment_type',
+  'hide_empty'=> false,
+]);
+
+
+  get_header(); ?>
+ 
+
+  <div class="container mx-auto p-4">
+    <!-- Inside your search.php or other template file where you want to display the search form -->
+    <form class="search-form flow-root mb-9" action="<?php echo esc_url(home_url('/')); ?>">
+      <label>
+          <span class="screen-reader-text">Search for:</span>
+          <input value="<?php echo isset($_GET['s']) ? $_GET['s'] : ''; ?>"
+           type="search" class="search-field rounded float-left" placeholder="Search…" 
+            name="s" />
+      </label>
+       
+          <!-- <select name="brand" id="countries" class="float-right border  text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:border-blue-500">
+            <option selected>For Rent</option>
+            <option value="newlist" >New Listings</option>
+            <option value="hightprice" >Highest Price</option>
+            <option value="lowestprice">Lowest Price</option>
+          </select> --> 
+
+          
+        <span class="screen-reader-text">Filter by Price:</span>
+        <select id="price-filter" name="price-filter" class="mx-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:border-blue-500">
+            <option value="" selected disabled>Select Price Range</option>
+            <option value="high">Highest Price</option>
+            <option value="low">Lowest Price</option>
+        </select>
     </label>
-    <select name="post_type" id="post_type">
-        <option value="all">All</option>
-        <option value="post" <?php selected($_GET['post_type'], 'post'); ?>>Posts</option>
-        <option value="page" <?php selected($_GET['post_type'], 'page'); ?>>Pages</option>
-        <!-- Add more options as needed -->
-    </select>
-    <button type="submit" class="search-submit">
-        <!-- Your SVG icon for the search button -->
-    </button>
-</form>
+         
+          
+          
+          <select name="brand" class="mr-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:border-blue-500">
+            <option value="">Choose a apartment</option>
+            <?php foreach($brands as $brand): ?>
 
+              <option 
+              <?php if( isset($_GET['brand']) && ( $_GET['brand'] == $brand->slug) ): ?>
+                selected
+              <?php endif; ?>
+              
+              value="<?php echo $brand->slug ?>"><?php echo $brand->name ?></option>
+              <?php endforeach; ?>
+          </select>
+
+          
+        <button type="submit" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Search
+            <!-- Your SVG icon for the search button -->
+        </button>
+    </form>
+   
    
 
     <?php if (have_posts()) : ?>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <?php while (have_posts()) : the_post(); ?>
                 <div class="bg-white rounded-lg p-4 shadow-md">
                 
@@ -35,11 +73,8 @@ get_header(); ?>
                     ?><?php
                     echo 'New ' . $time_ago . ' ago';
                 ?>
-  
-        
    
                     <?php
-	
                     if (has_post_thumbnail()) {
                         ?>
                         <a href="<?php the_permalink(); ?>">
@@ -92,12 +127,7 @@ get_header(); ?>
                     </svg>
                    <span class="text-[#545454] text-sm font-normal"><?php echo get_post_meta(get_the_ID(), 'pet_policy', true); ?></span>
                   </div>
-                  <div class="flex items-center justify-center gap-2">     
-                    <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" width="27px" height="18px"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> 
-                      <path d="M511.743,108.86l-5.879-23.526h-96.265c-4.71,0-8.533-3.823-8.533-8.533s3.823-8.533,8.533-8.533h91.998L497.331,51.2 H383.999c-4.71,0-8.533-3.823-8.533-8.533c0-4.71,3.823-8.533,8.533-8.533h109.065l-6.92-27.674 C485.196,2.662,481.783,0,477.866,0h-435.2c-3.678,0-6.929,2.347-8.098,5.837l-9.429,28.297h111.394 c4.71,0,8.533,3.823,8.533,8.533c0,4.71-3.823,8.533-8.533,8.533H19.447l-5.692,17.067h97.178c4.71,0,8.533,3.823,8.533,8.533 s-3.823,8.533-8.533,8.533H8.072l-7.637,22.904c-0.862,2.603-0.427,5.461,1.178,7.68c1.604,2.236,4.181,3.55,6.921,3.55h34.133 v375.467h-8.533c-4.71,0-8.533,3.823-8.533,8.533S29.422,512,34.133,512h17.067h145.067h17.067h34.133h17.067h34.133h17.067 h145.067h17.067c4.71,0,8.533-3.823,8.533-8.533s-3.823-8.533-8.533-8.533h-8.533V119.467h34.133 c2.628,0,5.111-1.212,6.724-3.285C511.812,114.116,512.383,111.411,511.743,108.86z M162.133,452.267 c0,4.71-3.823,8.533-8.533,8.533H85.333c-4.71,0-8.533-3.823-8.533-8.533v-51.2c0-4.71,3.823-8.533,8.533-8.533h68.267 c4.71,0,8.533,3.823,8.533,8.533V452.267z M162.133,366.933c0,4.71-3.823,8.533-8.533,8.533H85.333 c-4.71,0-8.533-3.823-8.533-8.533v-51.2c0-4.71,3.823-8.533,8.533-8.533h68.267c4.71,0,8.533,3.823,8.533,8.533V366.933z M162.133,281.6c0,4.71-3.823,8.533-8.533,8.533H85.333c-4.71,0-8.533-3.823-8.533-8.533v-51.2c0-4.71,3.823-8.533,8.533-8.533 h68.267c4.71,0,8.533,3.823,8.533,8.533V281.6z M162.133,196.267c0,4.71-3.823,8.533-8.533,8.533H85.333 c-4.71,0-8.533-3.823-8.533-8.533v-51.2c0-4.71,3.823-8.533,8.533-8.533h68.267c4.71,0,8.533,3.823,8.533,8.533V196.267z M213.333,145.067c0-4.71,3.823-8.533,8.533-8.533h68.267c4.71,0,8.533,3.823,8.533,8.533v51.2c0,4.71-3.823,8.533-8.533,8.533 h-68.267c-4.71,0-8.533-3.823-8.533-8.533V145.067z M213.333,230.4c0-4.71,3.823-8.533,8.533-8.533h68.267 c4.71,0,8.533,3.823,8.533,8.533v51.2c0,4.71-3.823,8.533-8.533,8.533h-68.267c-4.71,0-8.533-3.823-8.533-8.533V230.4z M213.333,315.733c0-4.71,3.823-8.533,8.533-8.533h68.267c4.71,0,8.533,3.823,8.533,8.533v51.2c0,4.71-3.823,8.533-8.533,8.533 h-68.267c-4.71,0-8.533-3.823-8.533-8.533V315.733z M315.733,494.933h-17.067V409.6h-34.133v85.333h-17.067V409.6h-34.133v85.333 h-17.067v-93.867c0-4.71,3.823-8.533,8.533-8.533h51.2h51.2c4.71,0,8.533,3.823,8.533,8.533V494.933z M435.199,452.267 c0,4.71-3.823,8.533-8.533,8.533h-68.267c-4.71,0-8.533-3.823-8.533-8.533v-51.2c0-4.71,3.823-8.533,8.533-8.533h68.267 c4.71,0,8.533,3.823,8.533,8.533V452.267z M435.199,366.933c0,4.71-3.823,8.533-8.533,8.533h-68.267 c-4.71,0-8.533-3.823-8.533-8.533v-51.2c0-4.71,3.823-8.533,8.533-8.533h68.267c4.71,0,8.533,3.823,8.533,8.533V366.933z M435.199,281.6c0,4.71-3.823,8.533-8.533,8.533h-68.267c-4.71,0-8.533-3.823-8.533-8.533v-51.2c0-4.71,3.823-8.533,8.533-8.533 h68.267c4.71,0,8.533,3.823,8.533,8.533V281.6z M435.199,196.267c0,4.71-3.823,8.533-8.533,8.533h-68.267 c-4.71,0-8.533-3.823-8.533-8.533v-51.2c0-4.71,3.823-8.533,8.533-8.533h68.267c4.71,0,8.533,3.823,8.533,8.533V196.267z"></path> <rect x="230.399" y="324.267" width="51.2" height="34.133"></rect> <rect x="93.866" y="153.6" width="51.2" height="34.133"></rect> <rect x="93.866" y="324.267" width="51.2" height="34.133"></rect> <rect x="93.866" y="238.933" width="51.2" height="34.133"></rect> <rect x="93.866" y="409.6" width="51.2" height="34.133"></rect> <rect x="230.399" y="153.6" width="51.2" height="34.133"></rect> <rect x="366.933" y="153.6" width="51.2" height="34.133"></rect> <rect x="366.933" y="409.6" width="51.2" height="34.133"></rect> <rect x="366.933" y="238.933" width="51.2" height="34.133"></rect> <rect x="230.399" y="238.933" width="51.2" height="34.133"></rect> <rect x="366.933" y="324.267" width="51.2" height="34.133"></rect> </g> </g> </g> </g>
-                    </svg>
-                  </div>
-                  <span class="text-[#545454] text-sm font-normal"><?php echo get_post_meta(get_the_ID(), 'furnished', true); ?> </span>
+                  
                 </div>
                 <div>
                 <div class="mt-7">
@@ -107,15 +137,26 @@ get_header(); ?>
                 </div>
           
                 </div>
-            <?php endwhile; ?>
+            <?php endwhile; 
+            ?>
+            
         </div>
     <?php else : ?>
         <p class="text-lg mt-8">No results found. Please try another search term.</p>
-    <?php endif; ?>
+    <?php endif; ?> <br>
+ </div>
+  <div class="grid place-items-center">
+      <?php aquila_pagination(); ?>
+  </div>
 
-</div>
 
 
 
-<?php get_footer(); ?>
+
+
+
+
+
+
+<?php get_footer(); ?> 
 
