@@ -1,63 +1,46 @@
-
-<div class="pro-section">
-  <div class="container">
-
-    <table>
-      <tr>
-        <td>
-          <div class="pros">
-            <h2>Pros</h2>
-
-      
-                <?php if (get_row_layout() == 'pro_cons') :
+<div class="grid grid-cols-2 px-24 gap-4 mb-24 mt-16">
+    <div class="col-span-1">
+        <div class="mb-4">
+        <i class="fa-solid fa-square-check pr-2 fa-xl" style="color: #67bb6e;"></i><span class="font-bold text-xl">PROs</span>
+        </div>
+        <div class="border-2 rounded-md border-black p-16">
+        <?php if (get_row_layout() == 'pro_cons') :
                   $columns_copy = get_sub_field('columns_copy');
                   if (is_array($columns_copy) || is_object($columns_copy)) {
                 ?>
-
-                  <div class="columns-section">
-                    
+                   <ul>
                     <?php foreach ($columns_copy as $column) : ?>
-                      <div class="column">
-                        <div class="pro-content">
-                        <p><?php echo $column['content']; ?></p>
-                    </div>
-                   
-                      </div>
+                    
+                        <li class="list-disc p-4"><?php echo $column['content']; ?></li>
+                  
                     <?php endforeach; ?>
-                  </div>
+                   </ul>
 
                 <?php } endif; ?>
-            
-           
-          </div>
-        </td>
+    </div>
+    </div>
+    <div class="col-span-1">
+        <div class="mb-4">
+        <i class="fa-solid fa-rectangle-xmark pr-2 fa-xl" style="color: #d03434;"></i><span class="font-bold text-xl">CONs</span> 
 
-        <td>
-          <div class="cons">
-            <h2>Cons</h2>
-
-  
-                <?php if (get_row_layout() == 'pro_cons') :
+        </div>
+        <div class="border-2 rounded-md border-black p-16">
+        <?php if (get_row_layout() == 'pro_cons') :
                   $columns_cons = get_sub_field('columns_cons');
                 ?>
 
-                  <div class="columns-section">
+                  <ul>
                     <?php foreach ($columns_cons as $column) : ?>
-                      <div class="column">
-                        <div class="pro-content">
-                        <p><?php echo $column['contenti']; ?></p>
-                    </div>
-                   
-                      </div>
+                    
+                        <li class="list-disc p-4"><?php echo $column['contenti']; ?></li>
+                  
                     <?php endforeach; ?>
-                  </div>
+                    </ul>
 
                 <?php endif; ?>
           
-           
-          </div>
-        </td>
-      </tr>
-    </table>
-  </div>
-                    </div>
+        </div>
+    </div>
+</div>
+
+

@@ -780,7 +780,6 @@ float: right;
 }
 
 .banner-search-main {
-  background-color:;
   border-radius: 6px;
   font-family: Plus Jakarta Sans;
   font-size: 16px;
@@ -979,3 +978,59 @@ line-height: normal;
   /* Other existing styles for the banner elements */
 }
 
+.apartment-template-thumbnail{
+  width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  backdrop-filter: blur(8px); /* Fallback for browsers supporting backdrop-filter */
+  -webkit-backdrop-filter: blur(8px); /* For Safari */
+  z-index: 999;
+  display: none;
+  transition: backdrop-filter 0.3s ease; /* Smooth transition for supported browsers */
+}
+
+/* Modal styles */
+#imageModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+  max-width: 90%; /* Adjust the maximum width of the modal */
+  max-height: 90vh; /* Adjust the maximum height of the modal */
+  overflow: hidden;
+}
+
+#imageModal img {
+  max-width: 800px;
+  height: 500px;
+  display: none; /* Initially hide all images */
+  border-radius: 6px;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  color: #000;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}

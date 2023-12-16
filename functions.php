@@ -70,7 +70,21 @@ add_action('pre_get_posts','custom_search_result');
 
 add_action('wp_enqueue_scripts', 'enqueue_jquery');
 
+function create_agent_role() {
+    $agent_caps = array(
+        'read' => true,
+        'edit_posts' => true,
+        'publish_posts' => true,
+        'upload_files' => true,
+        'edit_dashboard' => true,
+        'read_dashboard' => true,
+        'manage_options' => true, // Access to some settings
+        // Add more capabilities as needed...
+    );
 
+    add_role('agent', 'Agent', $agent_caps); // Create 'agent' role with specified capabilities
+}
+add_action('init', 'create_agent_role');
 function aquila_pagination() {
     $paged = get_query_var('paged') ? get_query_var('paged') : 1;
     

@@ -14,19 +14,136 @@ if ( have_posts() ) {
     </div>
 </div>
 
-
-
-<!-- gallery -->
 <div class="grid grid-cols-3 px-24 gap-2">
     <div class="col-span-2">
-    <?php the_post_thumbnail('full'); ?>
+        <div class="apartment-template-thumbnail rounded-md" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>');"></div>
     </div>
     <div class="grid col-span-1 col-row-2 gap-2">
-   
-        <img class="rounded-md" src="https://a0.muscache.com/im/pictures/miso/Hosting-523212523411973201/original/ea201062-2728-40d7-a70f-261f15cef61d.jpeg?im_w=1200" alt="">
-        <img class="rounded-md" src="https://a0.muscache.com/im/pictures/miso/Hosting-523212523411973201/original/ea201062-2728-40d7-a70f-261f15cef61d.jpeg?im_w=1200" alt="">
+        <?php
+        $gallery_images = get_field('gallery'); // Retrieve the ACF gallery field data
+        $visible_images = array_slice($gallery_images, 0, 2); // Show only the first two images
+        $remaining_images = array_slice($gallery_images, 2); // Get the remaining images
+
+        // Loop through the first two visible images
+        foreach ($visible_images as $index => $image_url) {
+            echo '<img class="rounded-md" src="' . esc_url($image_url) . '" style="width: 100%; height: 100%; object-fit: cover;" alt="Gallery Image">';
+        }
+
+        if (!empty($remaining_images)) {
+            // Display a button to open the modal
+            echo '<button id="openModalButton" class="bg-blue-500 text-white px-4 py-2 rounded-md mt-2">View More</button>';
+            
+            // Modal container (hidden by default)
+            echo '<div id="imageModal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center hidden">';
+                // Modal content
+                echo '<button class="close-button">&times;</button>';
+                echo '<div class="bg-white p-4 rounded-lg">';
+                foreach ($remaining_images as $image_url) {
+                    echo '<img class="rounded-md mb-4 hidden" src="' . esc_url($image_url) . '" style="width: 100%; height: auto; object-fit: cover;" alt="Gallery Image">';
+                }
+                echo '<div class="flex justify-between">';
+                echo '<button id="prevImage" class="text-lg text-gray-700">&#8249;</button>';
+                echo '<button id="nextImage" class="text-lg text-gray-700">&#8250;</button>';
+                echo '</div>';
+                echo '</div>';
+            echo '</div>';
+        }
+        ?>
     </div>
 </div>
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    // Function to set image size based on modal dimensions
+    function setImageSize() {
+        var modal = $('#imageModal');
+        var modalWidth = modal.outerWidth();
+        var modalHeight = modal.outerHeight();
+        
+        $('#imageModal img').css({
+            'max-width': modalWidth - 50, // Considering padding
+            'max-height': modalHeight - 80 // Considering padding and controls height
+        });
+    }
+
+    // Function to toggle modal and overlay and set image size
+    function toggleModal() {
+        $('.overlay').toggleClass('blur');
+        $('#imageModal').toggle();
+        setImageSize(); // Set image size when modal is opened
+    }
+
+    // Show Modal and Display All Images
+    $('#openModalButton').on('click', function() {
+        $('.overlay').show();
+        toggleModal();
+        $('#imageModal img').first().show();
+    });
+
+    // Close Modal
+    function closeModal() {
+        $('.overlay').removeClass('blur');
+        $('#imageModal').hide();
+    }
+
+    $('#imageModal .close-button').on('click', function() {
+        closeModal();
+    });
+
+    // Close Modal when clicking outside the modal
+    $('.overlay, #imageModal').on('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+    // $('.overlay, #imageModal').on('click', function(e) {
+    //     if (e.target === this) {
+    //         $('.overlay').removeClass('blur');
+    //         $('#imageModal').hide();
+    //     }
+    // });
+
+    // Navigation Arrows
+    $('#prevImage').on('click', function() {
+        var currentImg = $('#imageModal img:visible');
+        var prevImg = currentImg.prev('img');
+
+        if (prevImg.length) {
+            currentImg.hide();
+            prevImg.show();
+        }
+    });
+
+    $('#nextImage').on('click', function() {
+        var currentImg = $('#imageModal img:visible');
+        var nextImg = currentImg.next('img');
+
+        if (nextImg.length) {
+            currentImg.hide();
+            nextImg.show();
+        }
+    });
+
+    // Resize images when the window is resized
+    $(window).resize(function() {
+        if ($('#imageModal').is(':visible')) {
+            setImageSize();
+        }
+    });
+});
+
+
+
+
+</script>
+
+
+</div>
+
+
 
 <!-- //details -->
     <div class="grid grid-cols-3 px-24 gap-4 mt-16">
@@ -64,32 +181,33 @@ if ( have_posts() ) {
                 PROPERTY FEATURES
             </div>
             <div class="grid grid-cols-2 mt-4">
-                <div class="col-span-1">
-                    <ul>
-                    <?php
-                $features = get_field('features');
-                if ($features) {
-                    foreach ($features as $feature) {
-                        echo '<li>' . $feature . '</li>';
-                    }
+    <div class="col-span-1 ml-4">
+        <ul>
+            <?php
+            $features = get_field('features');
+            if ($features) {
+                $firstFiveFeatures = array_slice($features, 0, 5); // Get the first five features
+                foreach ($firstFiveFeatures as $feature) {
+                    echo '<li>' . $feature . '</li>';
                 }
-                ?>
-                    </ul>
-                </div>
-                <div class="col-span-1">
-                <ul>
-                        <li>
-                            Number of Rooms: 3
-                        </li>
-                        <li>
-                            Private Terrace
-                        </li>
-                        <li>
-                            High Ceiling
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            }
+            ?>
+        </ul>
+    </div>
+    <div class="col-span-1">
+        <ul>
+            <?php
+            if ($features) {
+                $remainingFeatures = array_slice($features, 5); // Get the remaining features after the first five
+                foreach ($remainingFeatures as $feature) {
+                    echo '<li>' . $feature . '</li>';
+                }
+            }
+            ?>
+        </ul>
+    </div>
+</div>
+
             
         </div>
         <!-- Agent details -->
@@ -126,6 +244,7 @@ if ( have_posts() ) {
     <h5 class="font-bold mb-4 ml-2">LOCATION</h5>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46940.2060114189!2d21.1587273!3d42.666380100000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ee605110927%3A0x9365bfdf385eb95a!2sPristina!5e0!3m2!1sen!2s!4v1702657960418!5m2!1sen!2s"  height="400" style="border:0; border-radius:10px; width:90vw;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
+<?php include (get_template_directory().'/include/module.php'); ?> 
 </div>
 <?php
     }
