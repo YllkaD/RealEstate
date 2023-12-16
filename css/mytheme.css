@@ -979,3 +979,60 @@ line-height: normal;
   /* Other existing styles for the banner elements */
 }
 
+  /*
+	==========================================
+	 pagination
+	==========================================
+*/
+.grid span.active:after {
+  content: "";
+}
+
+.grid span.page-number.active{
+  background-color: #cac6c6;
+  border-radius: 50%;
+}
+
+.grid span.page-number{
+  border-radius: 50%;
+}
+ /*
+	==========================================
+	 search card
+	==========================================
+*/
+.card-apartment{
+  padding: 12px 27px ;
+  border-radius: 50%;
+}
+
+.price-apartment{
+  color: #3A3A3A;
+font-family: Plus Jakarta Sans;
+font-size: 22px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+
+.hour{
+  position: relative;
+}
+.hours-ago{
+  position: absolute;
+  margin: 10px;
+  border-radius: 4px;
+  color: #232323;
+  font-family: Plus Jakarta Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 6px 10px;
+}
+
+ /*
+	==========================================
+	 
+	==========================================
+*/

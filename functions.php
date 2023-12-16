@@ -75,7 +75,7 @@ function aquila_pagination() {
     $paged = get_query_var('paged') ? get_query_var('paged') : 1;
     
     $args = array(
-        'before_page_number' => '<span class="page-number flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-300 bg-white border border-e-0 border-gray-100 rounded-lg dark:text-gray-400 dark:hover:bg-gray-300 dark:hover:text-white">',
+        'before_page_number' => '<span class="page-number flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-100 rounded-lg hover:bg-gray-300 hover:text-gray-800 d dark:text-gray-400 dark:hover:text-white">',
         'after_page_number'  => '</span>',
         'mid_size'           => 1,
     );
