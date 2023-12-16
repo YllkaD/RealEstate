@@ -218,7 +218,7 @@ if ( have_posts() ) {
                         <img class="rounded-full" src="https://a0.muscache.com/im/pictures/user/b1ee903e-bd3c-4679-a90c-fa0583dd722f.jpg?im_w=240">
                     </div>
                     <div class="">
-                        <h3>John Doe</h3>
+                        <h3><?php echo get_the_author(); ?></h3>
                     </div>
                 </div>
                 <div class="mt-4">
