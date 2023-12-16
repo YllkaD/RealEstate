@@ -79,13 +79,13 @@
                     if (has_post_thumbnail()) {
                         ?>
                         <a href="<?php the_permalink(); ?>">
-                            <?php the_post_thumbnail('medium', ['class' => 'object-cover h-48 w-full rounded-t-xl']);
+                            <?php the_post_thumbnail('medium', ['class' => 'object-cover h-66 w-full rounded-t-xl']);
                             ?>
                         </a>
                     <?php
                     } else {
                         ?>
-                    <img src="<?= get_template_directory_uri() . '/img/apartment.jpg' ?>" alt="Apartment Image" class="object-cover h-48 w-full rounded-t-xl">
+                    <img src="<?= get_template_directory_uri() . '/img/apartment.jpg' ?>" alt="Apartment Image" class="object-cover h-66 w-full rounded-t-xl">
                     <?php
                     }
     
