@@ -222,14 +222,34 @@ if ( have_posts() ) {
                     </div>
                 </div>
                 <div class="mt-4">
-                <p class="text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam a aspernatur suscipit deleniti voluptas?</p>
+                <p class="text-xs"><?php $post_id = get_the_ID();
+
+// Get the post author's user ID
+$post_author_id = get_post_field('post_author', $post_id);
+
+// Retrieve the author's email using the user ID
+$author_info = get_userdata($post_author_id);
+
+if ($author_info) {
+    echo esc_html($author_info->user_description); // Email of the post author
+}?></p>
                 </div>
             <div class="mt-4">
                 <div class="phone flex gap-4">
                 <i class="fa-solid fa-phone"></i> <p class="text-sm">0123445656</p>
                 </div>
                 <div class="email flex gap-4">
-                <i class="fa-regular fa-envelope"></i><p class="text-sm"> mail@example.com</p>
+                <i class="fa-regular fa-envelope"></i><p class="text-sm"> <?php $post_id = get_the_ID();
+
+// Get the post author's user ID
+$post_author_id = get_post_field('post_author', $post_id);
+
+// Retrieve the author's email using the user ID
+$author_info = get_userdata($post_author_id);
+
+if ($author_info) {
+    echo esc_html($author_info->user_email); // Email of the post author
+} ?></p>
                 </div>
             </div>
             <div class="mt-4 flex justify-center">
