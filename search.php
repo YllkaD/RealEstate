@@ -2,17 +2,9 @@
   /*
   Template Name: Custom Search
   */
-$is_search = count($_GET);
-
-
-$brands=get_terms([
-  'taxonomy'=> 'apartment_type',
-  'hide_empty'=> false,
-]);
-
 
   get_header(); ?>
- 
+  
 
   <div class="container mx-auto p-4">
     <!-- Inside your search.php or other template file where you want to display the search form -->
@@ -33,7 +25,7 @@ $brands=get_terms([
 
           
         <span class="screen-reader-text">Filter by Price:</span>
-        <select id="price-filter" name="price-filter" class="mx-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:border-blue-500">
+        <select id="price-filter" name="price-filter" class="cursor-pointer  mx-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:border-blue-500">
             <option value="" selected disabled>Select Price Range</option>
             <option value="high">Highest Price</option>
             <option value="low">Lowest Price</option>
@@ -42,7 +34,7 @@ $brands=get_terms([
          
           
           
-          <select name="brand" class="mr-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:border-blue-500">
+          <select name="brand" class="cursor-pointer  mr-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:border-blue-500">
             <option value="">Choose a apartment</option>
             <?php foreach($brands as $brand): ?>
 
@@ -59,9 +51,16 @@ $brands=get_terms([
         <button type="submit" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Search
             <!-- Your SVG icon for the search button -->
         </button>
+        <div class="text-right">
+            <?php if (have_posts()) : ?>
+                    <?php while (have_posts()) : the_post(); ?>
+                    <?php endwhile; ?>
+                <p class="text-lg "><?php echo $wp_query->found_posts; ?>   Results</p>
+            <?php endif; ?> 
+        </div>
     </form>
    
-   
+    
 
     <?php if (have_posts()) : ?>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 hour">
@@ -140,7 +139,7 @@ $brands=get_terms([
                       </span>
                       </h3>              
                       <button>
-                          <a href="<?php the_permalink(); ?>" class="bg-blue-500 text-white py-2 px-6 rounded-full hover:bg-blue-600">Book Now</a>
+                          <a href="<?php the_permalink(); ?>" class="bg-blue-500 text-white py-1.5 px-3 rounded-full hover:bg-blue-600">Book Now</a>
                       </button>
                     </div>
                   </div>
