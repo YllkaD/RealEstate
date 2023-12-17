@@ -16,19 +16,11 @@ $content_module = get_sub_field('description');
       
       <div class="w-full rounded-xl  lg:pr-3 mt-6">
       <div class="bg-white-900 relative">
-        <?php
-        $post_thumbnail_id = get_post_thumbnail_id();
-        if (!empty($post_thumbnail_id)) {
-            $thumbnail_url = wp_get_attachment_image_src($post_thumbnail_id, 'full')[0];
-            ?>
-            <img src="<?= $thumbnail_url ?>" alt="Apartment Image" class="object-cover h-48 w-full rounded-t-xl">
-            <?php
-              } else {
-            ?>
-            <img src="<?= get_template_directory_uri() . '/img/apartment.jpg' ?>" alt="Default Image" class="object-cover h-66 w-full rounded-t-xl">
-            <?php
-             }
-            ?>
+      <div class="flex items-center justify-center gap-2">
+    <?php if (is_array($field['gallery']['value']) && !empty($field['gallery']['value'])) : ?>
+        <img src="<?= esc_url($field['gallery']['value'][0]) ?>" alt="Apartment Image" class="object-cover h-66 w-full rounded-t-xl">
+    <?php endif; ?>
+</div>
             <div class="border shadow-2xl  rounded-b-xl p-4">
                 <h2 class="text-2xl font-bold mb-2"><?= get_the_title($post_inside_cards)  ?></h2>
                 <div class="flex gap-4 text-gray-800 leading-relaxed">
@@ -44,6 +36,20 @@ $content_module = get_sub_field('description');
                   </svg>
                     <span class="text-[#545454] text-sm font-normal"><?= $field['bedrooms']['value']?> Bedrooms</span>
                   </div>
+
+
+                  <div class="flex items-center justify-center gap-2">
+    <?php
+    $address_value = is_array($field['address']['value']) ? implode(', ', $field['address']['value']) : $field['address']['value'];
+    ?>
+    <span class="text-[#545454] text-sm font-normal"><?= esc_html($address_value) ?> </span>
+</div>
+
+                  
+
+                  
+
+
                   <div class="flex items-center justify-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16" fill="none">
                     <path d="M6.1443 1.13718L6.46142 1.52375L6.1443 1.13718C5.82939 1.39552 5.6269 1.76961 5.6269 2.18628V2.57613C5.6269 4.53436 7.21436 6.12182 9.17259 6.12182H11.7068C12.0052 6.12182 12.2397 5.9834 12.3922 5.8725C12.4715 5.81479 12.5438 5.75304 12.603 5.70131C12.6213 5.68532 12.638 5.67068 12.6534 5.65706C12.6929 5.62234 12.7249 5.59417 12.7584 5.56669C12.8033 5.5299 12.8818 5.49717 12.9797 5.49717H19.0711C19.1689 5.49717 19.2475 5.5299 19.2923 5.56669C19.3258 5.59417 19.3579 5.62235 19.3973 5.65707C19.4128 5.67069 19.4294 5.68532 19.4477 5.70131C19.507 5.75304 19.5792 5.81479 19.6586 5.8725C19.811 5.9834 20.0456 6.12182 20.344 6.12182H22.1167C22.4165 6.12182 22.6888 6.22035 22.8764 6.37429L23.1936 5.98772L22.8764 6.37429C23.0613 6.52595 23.1396 6.70794 23.1396 6.8711V9.36902C23.1383 10.3604 22.6583 11.3363 21.7597 12.0736C21.1281 12.5917 20.3296 12.9578 19.4544 13.1304C18.6024 13.2984 17.8096 14.0067 17.8096 14.9915C17.8096 14.9925 17.8096 14.9967 17.8053 15.0051C17.8009 15.014 17.7907 15.0292 17.7695 15.0466C17.7247 15.0834 17.6461 15.1161 17.5482 15.1161C17.4504 15.1161 17.3718 15.0834 17.3269 15.0466C17.3057 15.0292 17.2955 15.014 17.2911 15.0051C17.2868 14.9967 17.2868 14.9925 17.2868 14.9915C17.2868 14.0254 16.5036 13.2422 15.5375 13.2422H8.89903C7.93293 13.2422 7.14974 14.0254 7.14974 14.9915C7.14974 14.9925 7.1497 14.9967 7.14545 15.0051C7.14099 15.014 7.13085 15.0292 7.1096 15.0466C7.06476 15.0834 6.98617 15.1161 6.88832 15.1161C6.79048 15.1161 6.71189 15.0834 6.66704 15.0466C6.6458 15.0292 6.63565 15.014 6.63119 15.0051C6.62694 14.9967 6.6269 14.9925 6.6269 14.9915C6.6269 14.0067 5.83418 13.2984 4.98216 13.1304C4.10695 12.9578 3.30842 12.5917 2.67685 12.0736C1.77829 11.3364 1.29834 10.3606 1.29695 9.36933V6.8711C1.29695 6.70794 1.37524 6.52595 1.56011 6.37429C1.74775 6.22035 2.02001 6.12182 2.31979 6.12182C3.8575 6.12182 5.10406 4.87526 5.10406 3.33755V2.18628C5.10406 1.77462 5.30268 1.3543 5.70174 1.02693C6.10357 0.697282 6.66634 0.500028 7.26903 0.500033L7.27111 0.500024C7.79933 0.497829 8.30301 0.64557 8.69732 0.90596C9.08744 1.16358 9.33636 1.50744 9.43242 1.86635C9.43263 1.86817 9.43248 1.86982 9.43193 1.87204C9.43107 1.87552 9.42791 1.88519 9.4164 1.89929L9.80367 2.21555L9.4164 1.89929C9.39157 1.92969 9.33368 1.97132 9.24037 1.98684C9.14753 2.00229 9.05597 1.98516 8.99044 1.94991C8.92561 1.91504 8.91193 1.87854 8.91033 1.87237L8.91048 1.87233L8.90701 1.86022C8.80814 1.5156 8.57666 1.23095 8.27867 1.03815C7.98161 0.845956 7.6255 0.74827 7.26819 0.749315C6.86146 0.749497 6.45622 0.88129 6.1443 1.13718ZM18.8096 7.49575C18.8096 6.52964 18.0265 5.74646 17.0604 5.74646H14.9904C14.0243 5.74646 13.2411 6.52964 13.2411 7.49575C13.2411 8.46185 14.0243 9.24503 14.9904 9.24503H17.0604C18.0265 9.24503 18.8096 8.46185 18.8096 7.49575ZM22.2733 10.7902C22.4986 10.344 22.6167 9.86089 22.6167 9.36967V8.01323C22.6167 7.10631 21.8815 6.3711 20.9746 6.3711C20.0677 6.3711 19.3325 7.10631 19.3325 8.01323V9.36967C19.3325 9.37068 19.3324 9.37494 19.3282 9.38336C19.3237 9.39219 19.3136 9.40738 19.2923 9.4248C19.2475 9.46159 19.1689 9.49432 19.0711 9.49432H12.9797C12.8818 9.49432 12.8033 9.46159 12.7584 9.4248C12.7372 9.40738 12.727 9.39219 12.7226 9.38336C12.7183 9.37494 12.7183 9.37069 12.7183 9.36967C12.7183 7.71361 11.3758 6.3711 9.7197 6.3711H4.81837C3.1623 6.3711 1.81979 7.71361 1.81979 9.36967C1.81979 10.3662 2.30305 11.2963 3.11775 11.9647C3.92966 12.6308 5.01309 12.9929 6.1269 12.9929H18.3096C18.8629 12.9929 19.4124 12.9036 19.9274 12.7286C20.4424 12.5536 20.9158 12.2953 21.3188 11.9647C21.7219 11.634 22.0482 11.236 22.2733 10.7902Z" stroke="#545454"/>
@@ -59,7 +65,7 @@ $content_module = get_sub_field('description');
                 <div class="flex items-center justify-between">    
                 <span class="mr-auto text-left mb-3.5 text-2xl font-bold text-gray-700 ml-3"><?= number_format($field['price']['value']) ?> €</span>
 
-                <a href="<?= get_the_permalink($post_inside_cards); ?>" class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</a>
+                <a href="<?= get_the_permalink($post_inside_cards); ?>" class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</a>
               </div>
             </div>
           </div>          

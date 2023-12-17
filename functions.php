@@ -42,15 +42,63 @@ if ( file_exists( get_template_directory() . '/include/taxonomies.php' ) ) {
 add_theme_support( 'post-thumbnails' );
 
 
-function custom_search_result($query){
+// function custom_search_result($query){
+//     if ($query->is_main_query() && !is_admin() && $query->is_search()) {
+//        $query->set('post_type', array('apartment'));
+//        $query->set('posts_per_page', 9);
+//     }
+
+// }
+// add_action('pre_get_posts','custom_search_result');
+
+
+function custom_search_result($query) {
+    global $apartment_type;
+
+    $apartment_type = get_terms(array(
+        'taxonomy' => 'apartment_type',
+        'hide_empty' => false, // Set to true if you want to hide empty terms
+    ));
+
     if ($query->is_main_query() && !is_admin() && $query->is_search()) {
-       $query->set('post_type', array('apartment'));
-       $query->set('posts_per_page', 9);
+        $query->set('post_type', array('apartment'));
+        $query->set('posts_per_page', 9);
+
+        // Check for price filter in the URL parameters
+        $price_filter = isset($_GET['price-filter']) ? $_GET['price-filter'] : '';
+
+        // Check for apartment type filter in the URL parameters
+        $apartment_type_filter = isset($_GET['apartment-type']) ? $_GET['apartment-type'] : '';
+
+        // Debug statements
+        error_log('Price Filter: ' . $price_filter);
+        error_log('Apartment Type Filter: ' . $apartment_type_filter);
+
+        // Modify the query based on the selected price filter
+        if ($price_filter === 'high') {
+            $query->set('orderby', 'meta_value_num');
+            $query->set('meta_key', 'price'); // Change 'price' to your actual custom field name for price
+            $query->set('order', 'DESC');
+        } elseif ($price_filter === 'low') {
+            $query->set('orderby', 'meta_value_num');
+            $query->set('meta_key', 'price'); // Change 'price' to your actual custom field name for price
+            $query->set('order', 'ASC');
+        }
+
+        // Modify the query based on the selected apartment type filter
+        if ($apartment_type_filter) {
+            $query->set('tax_query', array(
+                array(
+                    'taxonomy' => 'apartment_type',
+                    'field' => 'slug', // Use 'slug' or 'name' depending on your URL parameters
+                    'terms' => $apartment_type_filter,
+                ),
+            ));
+        }
     }
-
 }
-add_action('pre_get_posts','custom_search_result');
 
+add_action('pre_get_posts', 'custom_search_result');
 
 
 
@@ -112,6 +160,8 @@ function aquila_pagination() {
     </script>
     <?php
 }
+
+
 
 
  ?>

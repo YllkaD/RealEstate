@@ -16,37 +16,23 @@
             name="s" />
       </label>
        
-          <!-- <select name="brand" id="countries" class="float-right border  text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:border-blue-500">
-            <option selected>For Rent</option>
-            <option value="newlist" >New Listings</option>
-            <option value="hightprice" >Highest Price</option>
-            <option value="lowestprice">Lowest Price</option>
-          </select> --> 
-
           
-        <span class="screen-reader-text">Filter by Price:</span>
-        <select id="price-filter" name="price-filter" class="cursor-pointer  mx-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:border-blue-500">
-            <option value="" selected disabled>Select Price Range</option>
-            <option value="high">Highest Price</option>
-            <option value="low">Lowest Price</option>
-        </select>
-    </label>
-         
-          
-          
-          <select name="brand" class="cursor-pointer  mr-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:border-blue-500">
-            <option value="">Choose a apartment</option>
-            <?php foreach($brands as $brand): ?>
+ 
+    <span class="screen-reader-text">Filter by Price:</span>
+    <select id="price-filter" name="price-filter" class="cursor-pointer mx-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:border-blue-500">
+    <option value="" <?php echo empty($_GET['price-filter']) ? 'selected disabled' : ''; ?>>Select Price Range</option>
+    <option value="high" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'high' ? 'selected' : ''; ?>>Highest Price</option>
+    <option value="low" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'low' ? 'selected' : ''; ?>>Lowest Price</option>
+</select>
 
-              <option 
-              <?php if( isset($_GET['brand']) && ( $_GET['brand'] == $brand->slug) ): ?>
-                selected
-              <?php endif; ?>
-              
-              value="<?php echo $brand->slug ?>"><?php echo $brand->name ?></option>
-              <?php endforeach; ?>
-          </select>
-
+   
+    <select name="apartment-type" class="cursor-pointer mr-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:border-blue-500">
+    <option value="">Choose an apartment</option>
+    <?php foreach ($apartment_type as $apartment): ?>
+        <option <?php echo (isset($_GET['apartment-type']) && ($_GET['apartment-type'] == $apartment->slug)) ? 'selected' : ''; ?>
+                value="<?php echo esc_attr($apartment->slug); ?>"><?php echo esc_html($apartment->name); ?></option>
+    <?php endforeach; ?>
+</select>
           
         <button type="submit" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Search
             <!-- Your SVG icon for the search button -->
