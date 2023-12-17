@@ -59,7 +59,7 @@ $content_module = get_sub_field('description');
                 <div class="flex items-center justify-between">    
                 <span class="mr-auto text-left mb-3.5 text-2xl font-bold text-gray-700 ml-3"><?= number_format($field['price']['value']) ?> €</span>
 
-                <a href="<?= get_the_permalink($post_inside_cards); ?>" class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</a>
+                <a href="<?= get_the_permalink($post_inside_cards); ?>" class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</a>
               </div>
             </div>
           </div>          

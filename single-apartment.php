@@ -149,8 +149,18 @@ if ( have_posts() ) {
     <div class="grid grid-cols-3 px-24 gap-4 mt-16">
         <div class="col-span-2">
             <div class="price flex justify-between">
-                <h4>$<?php echo the_field('price'); ?></h4>
-                <h4><i class="fa-solid fa-location-dot"></i> <?php the_field('address'); ?></h4>
+                <h4><?php echo the_field('price'); ?>€</h4>
+                <h4><?php $location = get_field('address');
+
+if (isset($location['street_name']) && isset($location['city'])) {
+    echo '<p class="text-gray-700"><span style="display: inline-flex; align-items: center;"><svg width="20px" height="20px" viewBox="0 0 0.4 0.4" xmlns="http://www.w3.org/2000/svg" fill="#000000"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.271 0.067A0.101 0.101 0 0 0 0.201 0.038h-0.001a0.101 0.101 0 0 0 -0.1 0.1c0 0.019 0.005 0.037 0.015 0.053L0.193 0.35h0.013l0.079 -0.16c0.01 -0.016 0.015 -0.034 0.015 -0.053a0.101 0.101 0 0 0 -0.03 -0.07zM0.198 0.063l0.002 0 0.002 0a0.077 0.077 0 0 1 0.074 0.076 0.069 0.069 0 0 1 -0.012 0.039l-0.001 0.001 0 0.001L0.2 0.307l-0.063 -0.128 0 -0.001 -0.001 -0.001a0.069 0.069 0 0 1 -0.012 -0.039A0.077 0.077 0 0 1 0.198 0.063zm0.015 0.054a0.025 0.025 0 1 0 -0.028 0.042 0.025 0.025 0 0 0 0.028 -0.042zM0.172 0.096a0.05 0.05 0 1 1 0.056 0.083 0.05 0.05 0 0 1 -0.056 -0.083z"/></svg> '
+        . esc_html($location['street_name']) . ', ' . esc_html($location['city']) . '</span></p>';
+} elseif (isset($location['address'])) {
+    echo '<p class="text-gray-700"><b>Location: </b>' . esc_html($location['address']) . '</p>';
+} else {
+    echo '<p class="text-gray-700">No location available</p>';
+}
+?></p></h4>
             </div>
             <div class="grid grid-cols-4 border-2 border-blue p-4 rounded-md mt-4">
                 <div class="">
@@ -260,10 +270,17 @@ if ($author_info) {
     </div>
 
 <!-------------------------------------------- MAP ------------------------------------------------------>
-<div class="px-24 mt-16 mb-8">
-    <h5 class="font-bold mb-4 ml-2">LOCATION</h5>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46940.2060114189!2d21.1587273!3d42.666380100000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ee605110927%3A0x9365bfdf385eb95a!2sPristina!5e0!3m2!1sen!2s!4v1702657960418!5m2!1sen!2s"  height="400" style="border:0; border-radius:10px; width:90vw;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+<div>
+        <?php if (get_field('address')) : ?>
+                    <?php 
+                        $location = get_field('address');
+                        if( $location ): ?>
+                            <div class="acf-map" data-zoom="16">
+                                <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+                            </div>
+                    <?php endif; ?>
+                <?php endif; ?>
+        </div>
 <?php include (get_template_directory().'/include/module.php'); ?> 
 </div>
 <?php
