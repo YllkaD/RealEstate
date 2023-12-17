@@ -689,6 +689,10 @@ margin-top: 10px;
   justify-content: space-around;
 }
 
+.footer .follow-us h2{
+  margin-left: 50px;
+}
+
 .footer .policy{
   color: #000;
   font-size: 7.5px;
