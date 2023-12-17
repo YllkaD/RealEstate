@@ -120,7 +120,7 @@
                       </span>
                       </h3>              
                       <button>
-                          <a href="<?php the_permalink(); ?>" class="bg-blue-500 text-white py-1.5 px-3 rounded-full hover:bg-blue-600">Book Now</a>
+                          <a href="<?php the_permalink(); ?>" class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</a>
                       </button>
                     </div>
                   </div>
