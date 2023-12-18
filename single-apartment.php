@@ -16,7 +16,9 @@ if ( have_posts() ) {
 
 <div class="grid grid-cols-3 px-24 gap-2">
     <div class="col-span-2">
-        <div class="apartment-template-thumbnail rounded-md" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>');"></div>
+        <div class="apartment-template-thumbnail rounded-md" style="background-size: cover;
+    height: 100%;
+    width: 100%;background-image: url('<?php the_post_thumbnail_url('full'); ?>');"></div>
     </div>
     <div class="grid col-span-1 col-row-2 gap-2">
         <?php
@@ -270,7 +272,7 @@ if ($author_info) {
     </div>
 
 <!-------------------------------------------- MAP ------------------------------------------------------>
-<div>
+<div class="container mx-auto my-20">
         <?php if (get_field('address')) : ?>
                     <?php 
                         $location = get_field('address');

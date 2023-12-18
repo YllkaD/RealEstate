@@ -21,9 +21,9 @@
     
     <select id="price-filter" name="price-filter" class="cursor-pointer mx-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:border-blue-500">
       <option value="" <?php echo empty($_GET['price-filter']) ? 'selected disabled' : ''; ?>>Select Price Range</option>
-      <option value="new" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'new' ? 'selected' : ''; ?>>New Listing</option>
-      <option value="high" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'high' ? 'selected' : ''; ?>>Highest Price</option>
-      <option value="low" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'low' ? 'selected' : ''; ?>>Lowest Price</option>
+      <option class="p-32" value="new" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'new' ? 'selected' : ''; ?>>New Listing</option>
+      <option class="p-32" value="high" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'high' ? 'selected' : ''; ?>>Highest Price</option>
+      <option class="p-32" value="low" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'low' ? 'selected' : ''; ?>>Lowest Price</option>
     </select>
 
    
@@ -38,21 +38,29 @@
         <button type="submit" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Search
             <!-- Your SVG icon for the search button -->
         </button>
-        <div class="text-right">
-            <?php if (have_posts()) : ?>
-                    <?php while (have_posts()) : the_post(); ?>
-                    <?php endwhile; ?>
-                <p class="text-lg "><?php echo $wp_query->found_posts; ?>   Results</p>
-            <?php endif; ?> 
-        </div>
+        
     </form>
    
+    <div class="flex justify-between items-center pb-10">
+    <a href="javascript:history.go(-1);" class="text-black text-decoration-none">
+        <i class="fa-solid fa-arrow-left"></i> Back
+    </a>
+    <div class="text-right">
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : the_post(); ?>
+                <!-- Your post content here -->
+            <?php endwhile; ?>
+            <p class="text-lg"><?php echo $wp_query->found_posts; ?> Results</p>
+        <?php endif; ?>
+    </div>
+</div>
+
     
 
     <?php if (have_posts()) : ?>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 hour">
             <?php while (have_posts()) : the_post(); ?>
-                <div class=" rounded-lg p-4 ">
+                <div class="shadow-2xl rounded-lg ">
                 
                  <div class="bg-white shadow-md hours-ago">
                   <?php $post_date = get_the_date('F j, Y, g:i a'); 
@@ -82,7 +90,7 @@
                     
                     ?>
                     
-                  <div class="card-apartment">
+                  <div class="card-apartment p-6">
                     <h2 class="text-2xl font-bold mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                     <p class="text-gray-700 my-3">  
                         <?php $location = get_field('address', $post_id);

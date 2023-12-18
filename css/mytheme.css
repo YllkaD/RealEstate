@@ -95,7 +95,7 @@ body {
     font-weight: 600;
     line-height: normal;
     padding: 26px 0 35px 0px;
-    text-decoration-line: underline;
+    
     width: 100%;
   }
   .faq-text .accordion p,
@@ -762,11 +762,13 @@ margin-top: 10px;
 
 .banner-title {
   color: #FFF;
-  font-family: Plus Jakarta Sans;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+width: 93%;
+font-family: Plus Jakarta Sans;
+font-size: 48px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+padding-bottom: 20px;
 }
 
 .banner-description {
@@ -776,6 +778,7 @@ margin-top: 10px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  padding: 15px 0px;
 }
 
 .banner-search-main {
@@ -869,7 +872,7 @@ line-height: normal;
   width: 100%;
 }
 .slick-track{
-  padding: 122px 0 63px 0;
+  padding: 70px 0 40px 0;
 }
 .carousel .slick-prev:before {
   content: ""; 
@@ -1032,6 +1035,31 @@ line-height: normal;
 
  /*
 	==========================================
-	 
+	 Module Card
+	==========================================
+*/
+
+
+.content_module p,
+  .content_module h1,
+  .content_module h2,
+  .content_module h3,
+  .content_module h4,
+  .content_module h5,
+  .content_module h6{
+    color: #232323;
+
+font-family: Raleway;
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+padding-bottom: 50px;
+  }
+
+
+   /*
+	==========================================
+	
 	==========================================
 */
