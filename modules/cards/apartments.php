@@ -64,20 +64,3 @@ $content_module = get_sub_field('description');
     <?php endforeach; ?>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
