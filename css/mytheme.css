@@ -915,6 +915,10 @@ line-height: normal;
   .carousel {
       display: none;
   }
+
+  .price-apartment {
+    font-size: 15px;
+}
 }
   /* --------------------------------------------------------------------------------------- */
 
@@ -1063,3 +1067,17 @@ padding-bottom: 50px;
 	
 	==========================================
 */
+
+#prevImage{
+  position: absolute;
+  top: 50%;
+  font-size: 70px;
+  color: rgb(0, 0, 0);
+}
+#nextImage{
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  color: rgb(8, 8, 8);
+  font-size: 70px;
+}

@@ -124,7 +124,7 @@
                   
                     <div class="mt-10 flex flex-row justify-between ">
                       <h3 class="text-left ">
-                      <span class="text-[#545454] text-sm font-normal price-apartment" style="margin-right: 10px; margin-top:20px; font-size: 15px;">
+                      <span class="text-[#545454] text-sm font-normal price-apartment " style="margin-right: 10px; margin-top:20px; font-size: 25px; font:bold">
                           <?php echo number_format(get_post_meta(get_the_ID(), 'price', true), 0, '.', ','); ?>€ 
                       </span>
                       </h3>              

@@ -42,14 +42,7 @@ if ( file_exists( get_template_directory() . '/include/taxonomies.php' ) ) {
 add_theme_support( 'post-thumbnails' );
 
 
-// function custom_search_result($query){
-//     if ($query->is_main_query() && !is_admin() && $query->is_search()) {
-//        $query->set('post_type', array('apartment'));
-//        $query->set('posts_per_page', 9);
-//     }
 
-// }
-// add_action('pre_get_posts','custom_search_result');
 
 
 function custom_search_result($query) {
