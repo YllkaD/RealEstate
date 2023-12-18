@@ -7,7 +7,8 @@ if ( have_posts() ) {
 ?>
 <!-- //header button -->
 <div style="" class="flex  justify-between gap-2 px-24 mt-16 mb-8">
-    <a href="#"><i class="fa-solid fa-arrow-left"></i> Back to search result</a>
+<a href="javascript:history.go(-1);"><i class="fa-solid fa-arrow-left"></i> Back to search result</a>
+
     <div class="gap-x-4">
     <a href="#" class="bg-gray-200 px-4 py-2 rounded-md mx-4"><i class="fa-solid fa-arrow-up-from-bracket" style="color: #1c1c1c;"></i> Share</a>
     <a href="#" class="bg-gray-200 px-4 py-2 rounded-md"><i class="fa-regular fa-heart" style="color: #0d0d0d;"></i> Save</a>
