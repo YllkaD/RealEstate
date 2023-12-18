@@ -7,8 +7,7 @@ if ( have_posts() ) {
 ?>
 <!-- //header button -->
 <div style="" class="flex  justify-between gap-2 px-24 mt-16 mb-8">
-<a href="javascript:history.go(-1);"><i class="fa-solid fa-arrow-left"></i> Back to search result</a>
-
+    <a href="http://localhost/wordpress/?s="><i class="fa-solid fa-arrow-left"></i> Back to search result</a>
     <div class="gap-x-4">
     <a href="#" class="bg-gray-200 px-4 py-2 rounded-md mx-4"><i class="fa-solid fa-arrow-up-from-bracket" style="color: #1c1c1c;"></i> Share</a>
     <a href="#" class="bg-gray-200 px-4 py-2 rounded-md"><i class="fa-regular fa-heart" style="color: #0d0d0d;"></i> Save</a>
@@ -152,8 +151,8 @@ if ( have_posts() ) {
     <div class="grid grid-cols-3 px-24 gap-4 mt-16">
         <div class="col-span-2">
             <div class="price flex justify-between">
-                <h4><?php echo the_field('price'); ?>€</h4>
-                <h4><?php $location = get_field('address');
+                <h4 class="font-bold"><?php echo the_field('price'); ?>€</h4>
+                <h4 class="font-bold"><?php $location = get_field('address');
 
 if (isset($location['street_name']) && isset($location['city'])) {
     echo '<p class="text-gray-700"><span style="display: inline-flex; align-items: center;"><svg width="20px" height="20px" viewBox="0 0 0.4 0.4" xmlns="http://www.w3.org/2000/svg" fill="#000000"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.271 0.067A0.101 0.101 0 0 0 0.201 0.038h-0.001a0.101 0.101 0 0 0 -0.1 0.1c0 0.019 0.005 0.037 0.015 0.053L0.193 0.35h0.013l0.079 -0.16c0.01 -0.016 0.015 -0.034 0.015 -0.053a0.101 0.101 0 0 0 -0.03 -0.07zM0.198 0.063l0.002 0 0.002 0a0.077 0.077 0 0 1 0.074 0.076 0.069 0.069 0 0 1 -0.012 0.039l-0.001 0.001 0 0.001L0.2 0.307l-0.063 -0.128 0 -0.001 -0.001 -0.001a0.069 0.069 0 0 1 -0.012 -0.039A0.077 0.077 0 0 1 0.198 0.063zm0.015 0.054a0.025 0.025 0 1 0 -0.028 0.042 0.025 0.025 0 0 0 0.028 -0.042zM0.172 0.096a0.05 0.05 0 1 1 0.056 0.083 0.05 0.05 0 0 1 -0.056 -0.083z"/></svg> '
@@ -168,7 +167,7 @@ if (isset($location['street_name']) && isset($location['city'])) {
             <div class="grid grid-cols-4 border-2 border-blue p-4 rounded-md mt-4">
                 <div class="">
                     <div><p class="text-xs font-bold">PROPERTY TYPE</p></div>
-                    <div class="mt-8 gap-4"><i class="fa-regular fa-building align-middle"></i> Flat</div>
+                    <div class="mt-8 gap-4"><i class="fa-regular fa-building align-middle"></i> <?php the_field('property_type'); ?></div>
                 </div>
                 <div class="">
                 <div><p class="text-xs font-bold">SIZE</p></div>
@@ -228,7 +227,7 @@ if (isset($location['street_name']) && isset($location['city'])) {
             <div class="border-2 border-blue rounded-md p-4 align-middle">
                 <div class="flex gap-5">
                     <div style="width: 20%;" class="img">
-                        <img class="rounded-full" src="https://a0.muscache.com/im/pictures/user/b1ee903e-bd3c-4679-a90c-fa0583dd722f.jpg?im_w=240">
+                        <img class="rounded-full" src="https://toppng.com/uploads/preview/file-svg-profile-icon-vector-11562942678pprjdh47a8.png">
                     </div>
                     <div class="">
                         <h3><?php echo get_the_author(); ?></h3>
