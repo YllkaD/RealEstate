@@ -762,11 +762,13 @@ margin-top: 10px;
 
 .banner-title {
   color: #FFF;
-  font-family: Plus Jakarta Sans;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+width: 93%;
+font-family: Plus Jakarta Sans;
+font-size: 48px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+padding-bottom: 20px;
 }
 
 .banner-description {
@@ -776,6 +778,7 @@ margin-top: 10px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  padding: 15px 0px;
 }
 
 .banner-search-main {
