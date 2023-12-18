@@ -23,32 +23,23 @@ $content_module = get_sub_field('description');
 </div>
             <div class="border shadow-2xl  rounded-b-xl p-4">
                 <h2 class="text-2xl font-bold mb-2"><?= get_the_title($post_inside_cards)  ?></h2>
+
+                <div class="flex gap-2">
+                <svg width="20px" height="20px" viewBox="0 0 0.4 0.4" xmlns="http://www.w3.org/2000/svg" fill="#000000"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.271 0.067A0.101 0.101 0 0 0 0.201 0.038h-0.001a0.101 0.101 0 0 0 -0.1 0.1c0 0.019 0.005 0.037 0.015 0.053L0.193 0.35h0.013l0.079 -0.16c0.01 -0.016 0.015 -0.034 0.015 -0.053a0.101 0.101 0 0 0 -0.03 -0.07zM0.198 0.063l0.002 0 0.002 0a0.077 0.077 0 0 1 0.074 0.076 0.069 0.069 0 0 1 -0.012 0.039l-0.001 0.001 0 0.001L0.2 0.307l-0.063 -0.128 0 -0.001 -0.001 -0.001a0.069 0.069 0 0 1 -0.012 -0.039A0.077 0.077 0 0 1 0.198 0.063zm0.015 0.054a0.025 0.025 0 1 0 -0.028 0.042 0.025 0.025 0 0 0 0.028 -0.042zM0.172 0.096a0.05 0.05 0 1 1 0.056 0.083 0.05 0.05 0 0 1 -0.056 -0.083z"/></svg><?php
+                    $address_parts = is_array($field['address']['value']) ? $field['address']['value'] : explode(', ', $field['address']['value']);
+                    $city_state = implode(', ', array_slice($address_parts, -2)); // Get the last 2 elements
+                    ?>
+                    <span class="text-[#545454] text-sm font-normal"><?= esc_html($city_state) ?> </span>
+                </div>
+
                 <div class="flex gap-4 text-gray-800 leading-relaxed">
-                <!-- <div class="flex flex-row items-start justify-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="14" viewBox="0 0 21 14" fill="none">
-                    <path d="M15.8557 2.78996H11.7459C10.4423 2.78996 9.33979 3.65068 8.97556 4.83482C8.85661 4.32551 8.56275 3.86411 8.14178 3.50955C7.58634 3.04174 6.84879 2.78996 6.09404 2.78996C5.3393 2.78996 4.60175 3.04174 4.04631 3.50955C3.73493 3.77181 3.49309 4.09251 3.34015 4.44782V2.73315C3.34015 2.00774 2.75208 1.41968 2.02667 1.41968C1.30126 1.41968 0.713196 2.00774 0.713196 2.73315V11.3833C0.713196 12.1087 1.30126 12.6968 2.02667 12.6968C2.75208 12.6968 3.34015 12.1087 3.34015 11.3833V11.1691C3.34015 10.8776 3.57641 10.6414 3.86786 10.6414H16.455C16.7464 10.6414 16.9827 10.8776 16.9827 11.1691V11.3833C16.9827 12.1087 17.5708 12.6968 18.2962 12.6968C19.0216 12.6968 19.6096 12.1087 19.6096 11.3833V6.03053C19.6096 5.14066 19.1893 4.30869 18.4787 3.71022C17.7707 3.11392 16.8262 2.78996 15.8557 2.78996Z" stroke="#545454"/>
-                  </svg>
-                    <span class="text-[#545454] text-sm font-normal"><?= $field['adress']['value']?> Location</span>
-                  </div> -->
+                
                 <div class="flex items-center justify-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="21" height="14" viewBox="0 0 21 14" fill="none">
                     <path d="M15.8557 2.78996H11.7459C10.4423 2.78996 9.33979 3.65068 8.97556 4.83482C8.85661 4.32551 8.56275 3.86411 8.14178 3.50955C7.58634 3.04174 6.84879 2.78996 6.09404 2.78996C5.3393 2.78996 4.60175 3.04174 4.04631 3.50955C3.73493 3.77181 3.49309 4.09251 3.34015 4.44782V2.73315C3.34015 2.00774 2.75208 1.41968 2.02667 1.41968C1.30126 1.41968 0.713196 2.00774 0.713196 2.73315V11.3833C0.713196 12.1087 1.30126 12.6968 2.02667 12.6968C2.75208 12.6968 3.34015 12.1087 3.34015 11.3833V11.1691C3.34015 10.8776 3.57641 10.6414 3.86786 10.6414H16.455C16.7464 10.6414 16.9827 10.8776 16.9827 11.1691V11.3833C16.9827 12.1087 17.5708 12.6968 18.2962 12.6968C19.0216 12.6968 19.6096 12.1087 19.6096 11.3833V6.03053C19.6096 5.14066 19.1893 4.30869 18.4787 3.71022C17.7707 3.11392 16.8262 2.78996 15.8557 2.78996Z" stroke="#545454"/>
                   </svg>
                     <span class="text-[#545454] text-sm font-normal"><?= $field['bedrooms']['value']?> Bedrooms</span>
                   </div>
-
-
-                  <div class="flex items-center justify-center gap-2">
-    <?php
-    $address_value = is_array($field['address']['value']) ? implode(', ', $field['address']['value']) : $field['address']['value'];
-    ?>
-    <span class="text-[#545454] text-sm font-normal"><?= esc_html($address_value) ?> </span>
-</div>
-
-                  
-
-                  
-
 
                   <div class="flex items-center justify-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16" fill="none">

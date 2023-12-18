@@ -70,5 +70,17 @@
     }
 });
 
- 
+ class KeyReside_Menu_Walker extends Walker_Nav_Menu
+{
+    function start_el(&$output, $item, $depth = 0, $args = null)
+    {
+        // Add 'current' class to the active menu item
+        if ($item->current) {
+            $item->classes[] = 'current';
+        }
+
+        // Continue with the default menu item output
+        parent::start_el($output, $item, $depth, $args);
+    }
+}
 </script>
