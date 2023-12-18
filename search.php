@@ -18,12 +18,13 @@
        
           
  
-    <span class="screen-reader-text">Filter by Price:</span>
+    
     <select id="price-filter" name="price-filter" class="cursor-pointer mx-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:border-blue-500">
-    <option value="" <?php echo empty($_GET['price-filter']) ? 'selected disabled' : ''; ?>>Select Price Range</option>
-    <option value="high" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'high' ? 'selected' : ''; ?>>Highest Price</option>
-    <option value="low" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'low' ? 'selected' : ''; ?>>Lowest Price</option>
-</select>
+      <option value="" <?php echo empty($_GET['price-filter']) ? 'selected disabled' : ''; ?>>Select Price Range</option>
+      <option value="new" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'new' ? 'selected' : ''; ?>>New Listing</option>
+      <option value="high" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'high' ? 'selected' : ''; ?>>Highest Price</option>
+      <option value="low" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'low' ? 'selected' : ''; ?>>Lowest Price</option>
+    </select>
 
    
     <select name="apartment-type" class="cursor-pointer mr-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:border-blue-500">
@@ -115,7 +116,7 @@
                   
                     <div class="mt-10 flex flex-row justify-between ">
                       <h3 class="text-left ">
-                      <span class="text-[#545454] text-sm font-normal price-apartment" style="margin-right: 10px; margin-top:20px; font-size: 25px;">
+                      <span class="text-[#545454] text-sm font-normal price-apartment" style="margin-right: 10px; margin-top:20px; font-size: 15px;">
                           <?php echo number_format(get_post_meta(get_the_ID(), 'price', true), 0, '.', ','); ?>€ 
                       </span>
                       </h3>              

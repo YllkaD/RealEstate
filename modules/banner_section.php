@@ -19,7 +19,7 @@ $image = get_sub_field('photo');
 
         <div class="banner-search-main">
             <form action="<?php echo esc_url(home_url()); ?>" method="get">   
-                <input type="search" placeholder="Search a City, an Address, a Neighborhood" class="banner-search" name="s">
+                <input type="search" placeholder="Search a City, an Address, a Neighborhood" class="banner-search text-black" name="s">
                 <button class="banner-btn">Search</button>
             </form>
         </div>

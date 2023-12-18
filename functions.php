@@ -83,6 +83,11 @@ function custom_search_result($query) {
             $query->set('orderby', 'meta_value_num');
             $query->set('meta_key', 'price'); // Change 'price' to your actual custom field name for price
             $query->set('order', 'ASC');
+        } elseif ($price_filter === 'new') {
+            // Implement logic for handling "New Listing"
+            // You might want to order by the publication date or any other criteria for new listings
+            $query->set('orderby', 'date');
+            $query->set('order', 'DESC');
         }
 
         // Modify the query based on the selected apartment type filter
@@ -99,6 +104,7 @@ function custom_search_result($query) {
 }
 
 add_action('pre_get_posts', 'custom_search_result');
+
 
 
 
