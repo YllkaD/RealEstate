@@ -21,9 +21,9 @@
     
     <select id="price-filter" name="price-filter" class="cursor-pointer mx-2 border text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:border-blue-500">
       <option value="" <?php echo empty($_GET['price-filter']) ? 'selected disabled' : ''; ?>>Select Price Range</option>
-      <option value="new" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'new' ? 'selected' : ''; ?>>New Listing</option>
-      <option value="high" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'high' ? 'selected' : ''; ?>>Highest Price</option>
-      <option value="low" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'low' ? 'selected' : ''; ?>>Lowest Price</option>
+      <option class="p-32" value="new" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'new' ? 'selected' : ''; ?>>New Listing</option>
+      <option class="p-32" value="high" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'high' ? 'selected' : ''; ?>>Highest Price</option>
+      <option class="p-32" value="low" <?php echo isset($_GET['price-filter']) && $_GET['price-filter'] === 'low' ? 'selected' : ''; ?>>Lowest Price</option>
     </select>
 
    

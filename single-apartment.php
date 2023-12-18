@@ -272,7 +272,7 @@ if ($author_info) {
     </div>
 
 <!-------------------------------------------- MAP ------------------------------------------------------>
-<div>
+<div class="container mx-auto my-20">
         <?php if (get_field('address')) : ?>
                     <?php 
                         $location = get_field('address');
